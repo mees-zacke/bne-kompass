@@ -1,8 +1,9 @@
 //Vars
-$navColor: white;
+$navColor: black;
 
 // Horizontale Navigation
 .mod_navigation {
+  font-family: $font2;
   a, span, strong {
     display: block;
   }
@@ -30,7 +31,6 @@ $navColor: white;
   }
 
   &#mainnav {
-    font-family: $font2;
     overflow: visible;
 
     .level_1 {

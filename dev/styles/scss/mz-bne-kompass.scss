@@ -11,15 +11,201 @@ body {
     //////// HEADER ////////
     ////////////////////////////
     #header {
-      .inside {
-
+      display: none;
+      @media all and (min-width: $break1){
+        display: block;
+        position: absolute;
+        top:0;
+        left: 0;
+        width: 100%;
+        z-index: 200;
+        .inside{
+          @include pageWidth;
+          #suche-service-container{
+            display: flex;
+            #header-suche-container{
+              margin: 20px 0 0 20px;
+              .formbody{
+                display: flex;
+                background-color: white;
+                border-radius: 2px;
+                width: 200px;
+                .widget-submit{
+                  width: 1.5rem;
+                  height: 1.5rem;
+                  margin-right: 5px;
+                }
+                .widget-text{
+                  width: 100%;
+                  input{
+                    width: 100%;
+                    border: none;
+                  }
+                }
+              }
+            }
+            #header-servicenav-container{
+              clip-path: polygon(0 0, 0 100%, 100% 90%, 100% 0);
+              background-color: $color1;
+              padding: 20px 10px;
+              margin-left: auto;
+              margin-right:20px;
+              *{
+                color: white;
+              }
+            }
+          }
+        }
       }
     }
 
     // Ende #Header
 
-
     /////////////////////////////
+    ////////// CUSTOM //////////
+    ////////////////////////////
+
+    .custom {
+      #kopfbild {
+
+        .inside {
+          .mod_article {
+            z-index: 100;
+            figure {
+              margin: 0;
+              img {
+
+              }
+            }
+          }
+          #mainnav-logo-container{
+            position: relative;
+            .clip{
+              overflow: hidden;
+              #mainnav-logo-container-outer{
+                padding-top: 5%;
+                background-color: $color1;
+                transform: rotate(-3deg) translate(0, -45%);
+                #mainnav-logo-container-inner{
+                  @include pageWidth;
+                  display: flex;
+                  align-items: flex-end;
+                  padding-bottom: 5px;
+
+                  .mm-opener{
+                    width: 2.375rem;
+                    height: 2.375rem;
+                    background-color: white;
+                  }
+
+                  .mod_navigation{
+                    display: none;
+                    @media all and (min-width: $break3) {
+                      display: block;
+                      .level_1{
+                        margin-left: 1.5rem;
+                        display: flex;
+                        li{
+                          font-size: 2.375rem;
+                          margin-right: 0.5rem;
+                          display: flex;
+                          color: white;
+                          a{
+                            color: $color3;
+                            &:focus, &:hover{
+                              color: white;
+                            }
+                          }
+                          strong{
+                            color: white;
+                          }
+                          &:after{
+                            content: "•";
+                            margin-left: 0.5rem;
+                          }
+                          &:last-of-type{
+                            margin-right: 0;
+                            &:after{
+                              display: none;
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+                @media all and (min-width: 1600px){
+                  width: 120%;
+                  margin-left: -10%;
+                }
+              }
+            }
+          }
+          #header-logo-container{
+            @include pageWidth;
+            position: relative;
+            #header-logo, #header-kompass{
+              position: absolute;
+              right: 20px;
+              bottom: 0;
+              figure{
+                box-sizing: border-box;
+                width: 150px;
+                height: 150px;
+              }
+            }
+            #header-logo{
+              overflow: visible;
+              figure{
+                padding: 35% 25%;
+                background-color: white;
+                border-radius: 50%;
+                box-shadow: 0 0 5px 5px rgba(0,0,0,0.5);
+              }
+            }
+            @media all and (min-width: $break2){
+              #header-logo, #header-kompass{
+                figure{
+                  width: 200px;
+                  height: 200px;
+                }
+              }
+            }
+            @media all and (min-width: $break3){
+              #header-logo, #header-kompass{
+                figure{
+                  width: 300px;
+                  height: 300px;
+                }
+              }
+            }
+          }
+        }
+
+        @media all and (min-width: $break3) {
+          padding-bottom: 60px;
+        }
+        @media all and (min-width: 3300px) {
+          .inside {
+            .mod_article {
+              figure {
+                picture {
+                  img {
+                    height: 500px;
+                    width: 100%;
+                    object-fit: cover;
+                  }
+                }
+              }
+            }
+          }
+        }
+        @media all and (min-width: $break3) {
+        }
+      }
+    }
+
+      /////////////////////////////
     //////// CONTAINER ////////
     ////////////////////////////
     #container {
@@ -27,6 +213,7 @@ body {
       #main {
         .inside {
           @include grid;
+          @include pageWidth;
         }
       }
 
