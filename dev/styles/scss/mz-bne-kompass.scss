@@ -1,0 +1,55 @@
+/**
+    Author
+    www.mees-zacke.de
+    Florian Krohmer
+**/
+body {
+
+  .mod_article {
+
+  }
+
+  #wrapper {
+
+    /////////////////////////////
+    //////// HEADER ////////
+    ////////////////////////////
+    #header {
+      .inside {
+
+      }
+    }
+
+    // Ende #Header
+
+
+    /////////////////////////////
+    //////// CONTAINER ////////
+    ////////////////////////////
+    #container {
+      // Anfang #main
+      #main {
+        .inside {
+
+        }
+      }
+
+      // Ende #main
+
+    }
+
+    // Ende #Container
+
+
+    /////////////////////////////
+    //////// FOOTER ////////
+    ////////////////////////////
+      #footer{
+
+      }
+    // Ende #Footer
+
+  }
+
+  // Ende #wrapper
+}

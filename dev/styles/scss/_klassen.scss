@@ -1,0 +1,49 @@
+h1, h2, h3, h4, h5, h6 {
+  &.unterstrichen {
+    border-bottom: 1px solid rgb(156, 156, 156);
+  }
+}
+
+
+.unterstrichen {
+  > h1, > h2, > h3, > h4, > h5, > h6 {
+    border-bottom: 1px solid rgb(156, 156, 156)
+  }
+}
+
+.abstandUnten {
+  margin-bottom: 30px;
+}
+
+.ohneAbstandUnten {
+  margin-bottom: 0 !important;
+}
+
+.scalingImages {
+  img {
+    width:100%;
+    object-fit: cover;
+    max-height: 615px;
+  }
+}
+.roundedImage {
+  img {
+    border-radius: 50%;
+  }
+}
+
+@media screen and (min-width: $break2) {
+  .zweiSpalten {
+    column-count: 2;
+    column-gap: 2rem;
+    margin-bottom: 1em;
+  }
+  .kurzerInhalt {
+    max-width: 75%;
+  }
+}
+
+
+// CSS Stile für Backend-Auswahl
+// Require: craffft/css-style-selector-bundle
+
