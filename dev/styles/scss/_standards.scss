@@ -31,7 +31,7 @@ a {
   @include transition;
 
   &:hover {
-    color: darken($color1, 10%);
+    color: $color2;
     border-bottom: none;
   }
 }
