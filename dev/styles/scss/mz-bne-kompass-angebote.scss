@@ -1,19 +1,304 @@
-body{
-  #wrapper{
-    #container{
-      #main{
-        .inside{
-          .mod_article{
-            .ce_catalogFilterForm{
-              grid-column: span 4;
-              .ctlg_form_field{
-                .accordeon-body{
-                  display: none;
+body {
+  #wrapper {
+    #container {
+      #main {
+        .inside {
+          .mod_article {
+
+            ////////////// FILTER //////////////
+
+            .ce_catalogFilterForm {
+              grid-column: span 12;
+
+              form {
+                background-color: lighten($color1, 50%);
+                border-bottom-left-radius: 1rem;
+                border-bottom-right-radius: 1rem;
+
+                .ctlg_form_field {
+                  .label {
+                    display: grid;
+                    grid-template-columns: 2em 1fr;
+                    grid-column-gap: 0.5em;
+                    align-items: center;
+                    font-family: $font2;
+                    letter-spacing: 2px;
+                    margin-bottom: 0.25em;
+                    padding: 1.5rem 1rem;
+                    color: $color1;
+                    background-color: lighten($color1, 40%);
+                    cursor: pointer;
+                    font-size: $teaserSize;
+
+                    &:before {
+                      content: "";
+                      width: 1.5em;
+                      height: 1.5em;
+                      box-sizing: border-box;
+                      padding-left: 0.3em;
+                      display: inline-block;
+                      background-image: url("/files/layout/images/bew-kompass.svg");
+                      background-repeat: no-repeat;
+                    }
+
+                    &:hover, &.accordeon-active {
+                      &:before {
+                        content: url("/files/layout/images/checkbox-haken.svg");
+                      }
+                    }
+                  }
+
+                  .accordeon-body {
+                    display: none;
+                    margin-bottom: 0;
+                    padding: 2rem 1rem;
+                    max-height: 450px;
+                    overflow-y: scroll;
+                    overflow-x: hidden;
+
+                    .checkbox_container {
+                      input {
+                        display: none;
+
+                        &:checked {
+                          + label {
+                            &:before {
+                              content: url("/files/layout/images/checkbox-haken.svg");
+                            }
+                          }
+                        }
+                      }
+
+                      label {
+                        display: grid;
+                        grid-template-columns: 2rem 1fr;
+                        grid-column-gap: 10px;
+                        font-size: 1.25rem;
+                        margin-right: 2rem;
+                        align-items: center;
+                        margin-bottom: 1rem;
+
+                        &:before {
+                          content: "";
+                          display: block;
+                          width: 1.5em;
+                          height: 1.5em;
+                          border: 1px solid $color1;
+                          background-color: white;
+                          border-radius: 20%;
+                          margin-right: 5px;
+                        }
+                      }
+                    }
+                  }
+
+                  &.text {
+                    margin-left: 1rem;
+                    margin-right: 1rem;
+                    background-color: white;
+                    display: flex;
+                    align-items: center;
+                    padding: 5px;
+                    max-width: 40%;
+
+                    input {
+                      border: none;
+                      outline: none;
+                      background: none;
+                      margin-left: 10px;
+                      font-family: $font2;
+                      letter-spacing: 2px;
+                      width: 100%;
+                    }
+
+                    &:before {
+                      content: url("/files/layout/images/lupe.svg");
+                      width: 1.5em;
+                      height: 1.5em;
+
+                    }
+                  }
+                }
+
+                .submit-container {
+                  padding: 2rem 1rem 0;
+                  appearance: none;
+                  display: flex;
+                  justify-content: space-between;
+
+                  button {
+                    color: $color1;
+                    background: none;
+                    border: none;
+                    padding: 0;
+                    outline: none;
+                    @include transition();
+                    cursor: pointer;
+
+                    &:hover {
+                      color: $color2;
+                    }
+                  }
+
+                  button, .reset a {
+                    font-size: $teaserSize;
+                    font-family: $font2;
+                    text-decoration: none;
+                    letter-spacing: 2px;
+                    margin: 0;
+                  }
+                }
+
+                .treffer-container {
+                  padding: 0.5rem 1rem;
+                  background-color: $color1;
+                  border-bottom-left-radius: 1rem;
+                  border-bottom-right-radius: 1rem;
+
+                  .treffer {
+                    margin: 0;
+                    color: white;
+                    font-family: $font2;
+                    font-size: $h3Size;
+                  }
                 }
               }
             }
-            .mod_catalogUniversalView{
-              grid-column: span 8;
+
+            ////////////////// LISTE //////////////////
+
+            .mod_catalogUniversalView {
+              grid-column: span 12;
+
+              > h2 {
+                margin: 0;
+                padding-bottom: 1em;
+                border-bottom: 2px solid $color1;
+              }
+
+              .ctlg_teaser {
+                padding-top: 1em;
+
+                a {
+                  > h3 {
+                    text-decoration: none;
+                    color: $fontColor;
+                    font-family: $font1;
+                    font-weight: 600;
+                    margin-bottom: 0.5em;
+                    padding: 0 1em;
+                  }
+
+                  .teaser-logo-container {
+                    margin-bottom: 1em;
+                    @include grid();
+
+                    .teaser {
+                      padding: 0 1em;
+                      grid-column: span 12;
+                      color: $fontColor;
+                      margin-bottom: 0;
+
+                      .weiterlesen {
+                        color: $color1;
+                        font-weight: 600;
+                      }
+                    }
+
+                    .angebotsbild {
+                      grid-column: span 4;
+                      padding: 0 1em;
+                    }
+                  }
+
+                  .format-ort-container {
+                    @include grid();
+                    padding: 1em 0;
+                    background-color: lighten($color1, 50%);
+
+                    h4 {
+                      margin-bottom: 0.5em;
+                    }
+
+                    .format-container {
+                      grid-column: span 12;
+                      padding: 0 1em;
+
+                      .format-liste {
+                        .format {
+                          color: $fontColor;
+                          font-size: $linkSize;
+                          font-weight: 600;
+                          display: flex;
+                          align-items: center;
+                          margin-bottom: 0.25em;
+
+                          &:before {
+                            content: url("/files/layout/images/bew-kompass.svg");
+                            width: 1.2em;
+                            height: 1.2em;
+                            margin-right: 0.5em;
+                          }
+                        }
+                      }
+                    }
+
+                    .ort-container {
+                      grid-column: span 12;
+                      padding: 0 1em;
+
+                      p {
+                        color: $fontColor;
+                        font-size: $linkSize;
+                        font-weight: 600;
+                      }
+                    }
+                  }
+                }
+
+                @media all and (min-width: $break3) {
+                  a {
+                    .teaser-logo-container {
+                      grid-template-columns: repeat(8, 1fr);
+
+                      .teaser {
+                        grid-column: span 6;
+                        padding-right: 0;
+                      }
+
+                      .angebotsbild {
+                        grid-column: span 2;
+                        padding-left: 0;
+                      }
+                    }
+
+                    .format-ort-container {
+                      grid-template-columns: repeat(8, 1fr);
+
+                      .format-container {
+                        grid-column: span 4;
+                        padding-right: 0;
+                      }
+                      .ort-container{
+                        grid-column: span 4;
+                      }
+                    }
+                  }
+                }
+              }
+            }
+
+            ///////////////////////////////////////////
+
+            @media all and (min-width: $break3) {
+
+              .ce_catalogFilterForm {
+                grid-column: span 4;
+
+                + .mod_catalogUniversalView {
+                  grid-column: span 8;
+                }
+              }
             }
           }
         }

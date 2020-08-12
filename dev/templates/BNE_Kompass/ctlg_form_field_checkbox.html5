@@ -1,6 +1,6 @@
 <div <?= $this->fieldID ?> class="<?= $this->cssClass;?>ctlg_form_field checkbox">
    <?php if( $this->label ): ?>
-      <p><?= $this->label ?></p>
+		<p class="label"><?= $this->label ?></p>
    <?php endif; ?>
    <div class="accordeon-body">
 	   <?php $intIndex = 0; ?>
@@ -11,8 +11,5 @@
 	      </div>
 	      <?php $intIndex++; ?>
 	   <?php endforeach; ?>
-	   <?php if( $this->description ): ?>
-	      <p class="description<?= ( $this->invalid ? ' error' : '' ) ?>"><?= $this->description ?></p>
-	   <?php endif; ?>
    </div>
 </div>

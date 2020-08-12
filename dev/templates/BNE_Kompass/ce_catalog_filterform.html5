@@ -1,0 +1,32 @@
+<?php $this->extend('block_unsearchable'); ?>
+<?php $this->block('content'); ?>
+<form <?= $this->formID ?> action="<?= $this->action ?>" method="<?= $this->method ?>" <?php if ( $this->cssClass ): ?>class="<?= $this->cssClass ?>"<?php endif; ?> <?= $this->attributes ?>>
+   <?php if ( $this->method == 'POST' ): ?>
+      <input type="hidden" name="FORM_SUBMIT" value="<?= $this->formSubmit ?>">
+      <input type="hidden" name="REQUEST_TOKEN" value="{{request_token}}">
+   <?php endif; ?>
+   <?php if( !empty( $this->fields ) && is_array( $this->fields ) ): ?>
+      <?php foreach( $this->fields as $strField ): ?>
+         <?= $strField ?>
+      <?php endforeach; ?>
+   <?php endif; ?>
+   <?php if( $this->reset || !$this->disableSubmit ): ?>
+		<div class="submit-container">
+			<?php if( !$this->disableSubmit ): ?>
+		      <div class="submit_container<?= $this->submitCssClass ?>">
+		         <button type="submit" <?= $this->submitId ?> name="_submit" value="<?= $this->formId ?>" class="submit<?= $this->submitCssClass ?>">Auswahl anzeigen</button>
+		      </div>
+	         <?php endif; ?>
+	         <?php if( $this->reset ): ?><p class="reset"><a href="/bildungsangebote/" id="id_reset_4">Auswahl löschen</a></p> <?php endif; ?>
+		</div>
+   <?php endif; ?>
+   <div class="treffer-container">
+	<p class="treffer">
+		Treffer..........<span class="treffer-count"></span>
+	</p>
+   </div>
+</form>
+<?php if ( $this->trigger ): ?>
+<script>document.addEventListener('DOMContentLoaded',function(){var objForm = document.getElementById('id_form_<?= $this->triggerId ?>');objForm.submit();})</script>
+<?php endif; ?>
+<?php $this->endblock(); ?>

@@ -36,14 +36,14 @@ $colorImageCaption: $fontColor;
 
 // Schrift Größen
 
-$max-fontSize: 23; // Font Size bei größter Größe
-$min-fontSize: 23; // Font Size bei mobiler Größe
+$max-fontSize: 19; // Font Size bei größter Größe
+$min-fontSize: 19; // Font Size bei mobiler Größe
 
 $max-teaserSize: 23; // Teaser Size bei größter Größe
 $min-teaserSize: 23; // Teaser Size bei mobiler Größe
 
-$max-linkSize: 23; // Link Size bei größter Größe
-$min-linkSize: 23; // Link Size bei mobiler Größe
+$max-linkSize: 16; // Link Size bei größter Größe
+$min-linkSize: 16; // Link Size bei mobiler Größe
 
 $fontWidth: 400;
 $lineHeight: 1.5;
@@ -59,8 +59,8 @@ $max-h2Size: 36; // h2 Size bei größter Größe
 $min-h2Size: 36; // h2 Size bei mobiler Größe
 
 // h3
-$max-h3Size: 32; // h3 bei größter Größe
-$min-h3Size: 32; // h3 bei mobiler Größe
+$max-h3Size: $max-teaserSize; // h3 bei größter Größe
+$min-h3Size: $max-teaserSize; // h3 bei mobiler Größe
 
 // h4
 $max-h4Size: $max-fontSize; // h4 bei größter Größe

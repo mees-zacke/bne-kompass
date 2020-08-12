@@ -23,10 +23,21 @@ jQuery(function ($) {
   var form_head = $(".ce_catalogFilterForm .ctlg_form_field > p").not(".description");
 
     form_head.on('click touch', function accordeonToggle(){
-      console.log("hey")
+      $(this).toggleClass('accordeon-active');
       $(this).siblings(".accordeon-body").slideToggle();
     });
+
+// BA Treffer Count
+
+  $(document).ready(function(){
+    countHits();
+  });
+
+  function countHits(){
+    var count = $('.mod_catalogUniversalView .ctlg_teaser').length;
+    $('.treffer-count').append(count);
+  }
+
+
+
 });
-
-
-
