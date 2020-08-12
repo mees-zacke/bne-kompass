@@ -1,0 +1,23 @@
+body{
+  #wrapper{
+    #container{
+      #main{
+        .inside{
+          .mod_article{
+            .ce_catalogFilterForm{
+              grid-column: span 4;
+              .ctlg_form_field{
+                .accordeon-body{
+                  display: none;
+                }
+              }
+            }
+            .mod_catalogUniversalView{
+              grid-column: span 8;
+            }
+          }
+        }
+      }
+    }
+  }
+}

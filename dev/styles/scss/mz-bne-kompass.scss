@@ -212,8 +212,10 @@ body {
       // Anfang #main
       #main {
         .inside {
-          @include grid;
           @include pageWidth;
+          .mod_article{
+            @include grid;
+          }
         }
       }
 

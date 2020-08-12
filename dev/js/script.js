@@ -2,7 +2,6 @@ jQuery(function ($) {
 
   $(document).ready(function () {
     isIE();
-    anwortseite();
   });
 
   /* https://jsfiddle.net/alvaroAV/svvz7tkn/ */
@@ -18,5 +17,16 @@ jQuery(function ($) {
     alert('Ihr Browser wird nicht mehr Unterstützt. Bitte verwenden Sie einen neuen. Zum Beispiel: Microsoft Edge, Google Chrome oder Mozilla Firefox');
   }
 
+
+// Ctlg Filter Akkordion
+
+  var form_head = $(".ce_catalogFilterForm .ctlg_form_field > p").not(".description");
+
+    form_head.on('click touch', function accordeonToggle(){
+      console.log("hey")
+      $(this).siblings(".accordeon-body").slideToggle();
+    });
 });
+
+
 
