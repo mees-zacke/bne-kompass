@@ -34,7 +34,8 @@ jQuery(function ($) {
   });
 
   function countHits(){
-    var count = $('.mod_catalogUniversalView .ctlg_teaser').length;
+    var count = $('.mod_catalogUniversalView #treffer-gesamt').val();
+    console.log(count);
     $('.treffer-count').append(count);
   }
 

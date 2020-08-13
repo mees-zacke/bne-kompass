@@ -5,7 +5,7 @@ body {
         .inside {
           .mod_article {
 
-            ////////////// FILTER //////////////
+///////////////////////////////////////// FILTER //////////////
 
             .ce_catalogFilterForm {
               grid-column: span 12;
@@ -165,7 +165,7 @@ body {
               }
             }
 
-            ////////////////// LISTE //////////////////
+////////////////////////////// LISTE //////////////////////////////////////////////
 
             .mod_catalogUniversalView {
               grid-column: span 12;
@@ -177,9 +177,14 @@ body {
               }
 
               .ctlg_teaser {
-                padding-top: 1em;
-
+                &:last-of-type{
+                  margin-bottom: 2rem;
+                }
                 a {
+                  padding-top: 1em;
+                  padding-bottom: 0.5em;
+                  border-bottom: 1px solid $color1;
+                  display: block;
                   > h3 {
                     text-decoration: none;
                     color: $fontColor;
@@ -202,6 +207,7 @@ body {
                       .weiterlesen {
                         color: $color1;
                         font-weight: 600;
+                        @include transition();
                       }
                     }
 
@@ -254,6 +260,16 @@ body {
                       }
                     }
                   }
+                  &:hover, &:focus{
+                    background-color: lighten($color1 , 50%);
+                    .teaser-logo-container{
+                      .teaser{
+                        .weiterlesen{
+                          color: $color2;
+                        }
+                      }
+                    }
+                  }
                 }
 
                 @media all and (min-width: $break3) {
@@ -281,6 +297,32 @@ body {
                       }
                       .ort-container{
                         grid-column: span 4;
+                      }
+                    }
+                  }
+                }
+              }
+              .pagination{
+                ul{
+                  display: flex;
+                  flex-wrap: wrap;
+                  li{
+                    a,strong{
+                      padding: 0.5rem;
+                    }
+                    &:first-of-type{
+                      a,strong{
+                        padding-left: 0;
+                      }
+                    }
+                    &:last-of-type{
+                      a,strong{
+                        padding-right: 0;
+                      }
+                    }
+                    &.first,&.previous,&.next,&.last{
+                      a{
+                        font-weight: 600;
                       }
                     }
                   }
