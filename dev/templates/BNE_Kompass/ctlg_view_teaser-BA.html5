@@ -1,0 +1,69 @@
+<div class="ctlg_teaser block<?= $this->cssClass ?>">
+
+    <?php if( $this->masterUrl ): ?>
+    <a href="<?= $this->masterUrl ?>" title="Link zu <?= $this->angebotstitel ?>">
+        <?php endif; ?>
+        <h3><?= $this->angebotstitel; ?></h3>
+        <div class="teaser-logo-container">
+            <p class="teaser">
+                <?= $this->kurzbeschreibung ?>
+                <span class="weiterlesen">Mehr »</span>
+            </p>
+            <?php if($this->angebotsbild): ?>
+            <figure class="angebotsbild">
+                <img src="<?= $this->angebotsbild['href'] ?>" alt="<?= $this->angebotsbild['alt'] ?>">
+            </figure>
+            <?php endif; ?>
+        </div>
+        <div class="format-ort-container datenblock">
+            <div class="format-container datenblock-spalte datenblock-links">
+                <h4>Angebotsart</h4>
+                <ul class="format-liste datenliste">
+                    <?php foreach($this->format as $formats): ?>
+                    <li class="format datenliste-punkt"><?= $formats ?></li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+
+            <?php if($this->angebot_vor_ort || $this->alternative_ort): ?>
+                <div class="ort-container datenblock-spalte datenblock-rechts">
+                    <h4>Ort</h4>
+
+                    <?php if($this->angebot_vor_ort): ?>
+                    <p>
+                        <?php if($this->bne_veranstalterStrasse): ?>
+                            <?= $this->bne_veranstalterStrasse ?><br>
+                        <?php endif; ?>
+                        <?php if($this->bne_veranstalterPlz || $this->bne_veranstalterOrt): ?>
+                            <?php if($this->bne_veranstalterPlz): ?>
+                                <span><?= $this->bne_veranstalterPlz ?></span>
+                            <?php endif; ?>
+                            <?php if($this->bne_veranstalterOrt): ?>
+                                <span><?= $this->bne_veranstalterOrt ?></span>
+                            <?php endif; ?>
+                        <?php endif; ?>
+                    </p>
+
+                    <?php else: ?>
+                    <p>
+                        <?php if($this->alternative_strasse): ?>
+                            <?= $this->alternative_strasse ?><br>
+                        <?php endif; ?>
+                        <?php if($this->bne_veranstalterPlz || $this->bne_veranstalterOrt): ?>
+                            <?php if($this->alternative_plz): ?>
+                                <span><?= $this->alternative_plz ?></span>
+                            <?php endif; ?>
+                            <?php if($this->alternative_plz): ?>
+                                <span><?= $this->alternative_ort ?></span>
+                            <?php endif; ?>
+                        <?php endif; ?>
+                    </p>
+                    <?php endif; ?>
+                </div>
+            <?php endif; ?>
+        </div>
+
+    <?php if( $this->masterUrl ): ?>
+      </a>
+    <?php endif; ?>
+</div>

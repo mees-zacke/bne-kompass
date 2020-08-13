@@ -176,7 +176,66 @@ body {
                 border-bottom: 2px solid $color1;
               }
 
-              .ctlg_teaser {
+              .ctlg_teaser,.ctlg_master{
+                .datenblock {
+                  @include grid();
+                  padding: 1em 0;
+                  background-color: lighten($color1, 50%);
+
+                  h4 {
+                    margin-bottom: 0.5em;
+                  }
+                  .datenblock-spalte{
+                    .datenliste {
+                      .datenliste-punkt {
+                        color: $fontColor;
+                        font-size: $linkSize;
+                        font-weight: 600;
+                        display: flex;
+                        align-items: center;
+                        margin-bottom: 0.25em;
+
+                        &:before {
+                          content: url("/files/layout/images/bew-kompass.svg");
+                          width: 1.2em;
+                          height: 1.2em;
+                          margin-right: 0.5em;
+                        }
+                      }
+                    }
+                    p {
+                      color: $fontColor;
+                      font-size: $linkSize;
+                      font-weight: 600;
+                    }
+
+                  }
+                  .datenblock-links, .datenblock-rechts  {
+                    grid-column: span 12;
+                    padding: 0 1em;
+                  }
+                  &.sdg-container{
+                    padding: 0 1em 1em;
+                    .sdg-liste{
+                      display: flex;
+                      flex-wrap: wrap;
+                      margin: 0;
+                      .sdg{
+                        width: 15%;
+                        margin-right: 2%;
+                        figure{
+                          margin: 0;
+                        }
+                        &:last-of-type{
+                          margin-right: 0;
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+
+              .ctlg_teaser{
                 &:last-of-type{
                   margin-bottom: 2rem;
                 }
@@ -216,50 +275,6 @@ body {
                       padding: 0 1em;
                     }
                   }
-
-                  .format-ort-container {
-                    @include grid();
-                    padding: 1em 0;
-                    background-color: lighten($color1, 50%);
-
-                    h4 {
-                      margin-bottom: 0.5em;
-                    }
-
-                    .format-container {
-                      grid-column: span 12;
-                      padding: 0 1em;
-
-                      .format-liste {
-                        .format {
-                          color: $fontColor;
-                          font-size: $linkSize;
-                          font-weight: 600;
-                          display: flex;
-                          align-items: center;
-                          margin-bottom: 0.25em;
-
-                          &:before {
-                            content: url("/files/layout/images/bew-kompass.svg");
-                            width: 1.2em;
-                            height: 1.2em;
-                            margin-right: 0.5em;
-                          }
-                        }
-                      }
-                    }
-
-                    .ort-container {
-                      grid-column: span 12;
-                      padding: 0 1em;
-
-                      p {
-                        color: $fontColor;
-                        font-size: $linkSize;
-                        font-weight: 600;
-                      }
-                    }
-                  }
                   &:hover, &:focus{
                     background-color: lighten($color1 , 50%);
                     .teaser-logo-container{
@@ -288,14 +303,14 @@ body {
                       }
                     }
 
-                    .format-ort-container {
+                    .datenblock{
                       grid-template-columns: repeat(8, 1fr);
 
-                      .format-container {
+                      .datenblock-links {
                         grid-column: span 4;
                         padding-right: 0;
                       }
-                      .ort-container{
+                      .datenblock-rechts{
                         grid-column: span 4;
                       }
                     }
@@ -323,6 +338,43 @@ body {
                     &.first,&.previous,&.next,&.last{
                       a{
                         font-weight: 600;
+                      }
+                    }
+                  }
+                }
+              }
+              .ctlg_master{
+                @include grid();
+                margin-top: 1em;
+                .titel{
+                  font-family: $font1;
+                  color: $fontColor;
+                  font-size: $fontSize;
+                  font-weight: 600;
+                }
+                .text{
+                  margin-bottom: 2em;
+                }
+                .angebotsbild, .anbieter{
+                  max-width: 50%;
+                  margin-top: 1em;
+                }
+                @media all and (min-width: $break3){
+                  .linke-spalte{
+                    grid-column: span 6;
+                  }
+                  .rechte-spalte {
+                    grid-column: span 6;
+                    .datenblock{
+                      grid-template-columns: repeat(6,1fr);
+                      .datenblock-links, .datenblock-rechts{
+                        grid-column: span 3;
+                      }
+                      .datenblock-links{
+                        padding-right: 0;
+                      }
+                      .datenblock-rechts{
+                        padding-left: 0;
                       }
                     }
                   }
