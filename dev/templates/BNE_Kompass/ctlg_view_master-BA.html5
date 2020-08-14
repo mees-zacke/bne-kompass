@@ -158,5 +158,5 @@
 
 
     </div>
-    <h1>Hier fehlt noch ein zurück Link</h1>
+    <a href="{{link_url::back}}" title="{{link_title::back}}" class="back">« Zurück</a>
 </div>

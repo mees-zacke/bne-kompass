@@ -188,10 +188,11 @@ body {
                   .datenblock-spalte{
                     .datenliste {
                       .datenliste-punkt {
+                        display: grid;
+                        grid-template-columns: 1.5em 1fr;
                         color: $fontColor;
                         font-size: $linkSize;
                         font-weight: 600;
-                        display: flex;
                         align-items: center;
                         margin-bottom: 0.25em;
 
@@ -223,6 +224,10 @@ body {
                       .sdg{
                         width: 15%;
                         margin-right: 2%;
+                        margin-bottom: 2%;
+                        &:nth-of-type(6n){
+                          margin-right: 0;
+                        }
                         figure{
                           margin: 0;
                         }
@@ -359,6 +364,20 @@ body {
                   max-width: 50%;
                   margin-top: 1em;
                 }
+                .back{
+                  display: block;
+                  width: 100%;
+                  padding: 0.5em;
+                  background-color: $color1;
+                  color: white;
+                  font-weight: 600;
+                  border: 1px solid white;
+                  &:hover, &:focus{
+                    background-color: white;
+                    border-color: $color1;
+                    color: $color1;
+                  }
+                }
                 @media all and (min-width: $break3){
                   .linke-spalte{
                     grid-column: span 6;
@@ -371,10 +390,11 @@ body {
                         grid-column: span 3;
                       }
                       .datenblock-links{
-                        padding-right: 0;
                       }
                       .datenblock-rechts{
-                        padding-left: 0;
+                      }
+                      &.sdg-container{
+                        grid-column: span 6;
                       }
                     }
                   }
