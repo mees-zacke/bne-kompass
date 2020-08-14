@@ -99,8 +99,7 @@ body {
                   }
                 }
                 @media all and (min-width: 1600px){
-                  width: 120%;
-                  margin-left: -10%;
+
                 }
               }
           }
@@ -193,8 +192,53 @@ body {
     /////////////////////////////
     //////// FOOTER ////////
     ////////////////////////////
-      #footer{
+      #meta{
+        .inside{
+          @include pageWidth;
+          margin-top: 3rem;
+        }
+      }
 
+      #footer{
+        margin-top: 0.5rem;
+        background-color: $color3;
+        .inside{
+          @include pageWidth;
+          padding-top: 0.75rem;
+          .ce_text{
+            ul{
+              display: flex;
+              justify-content: flex-end;
+              li{
+                font-size: $linkSize;
+                margin-left: 0.5rem;
+                padding-left: 0;
+                &:before{
+                  display: none;
+                }
+                &:after{
+                  content: "|";
+                  margin-left: 0.5rem;
+                  font-size: $linkSize;
+                }
+                &:last-of-type{
+                  &:after{
+                    display: none;
+                  }
+                }
+              }
+            }
+          }
+          #footer-logos{
+            background-color: white;
+            padding: 2rem 1rem 1rem;
+            clip-path: polygon(0 100% , 100% 100%, 100% 0 , 0 50%);
+            .ce_text{
+              text-align: end;
+              font-size: $linkSize;
+            }
+          }
+        }
       }
     // Ende #Footer
 

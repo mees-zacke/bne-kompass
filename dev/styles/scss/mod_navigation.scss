@@ -5,9 +5,6 @@ $navColor: black;
 .mod_navigation {
   font-family: $font2;
 
-  a, span, strong {
-    display: block;
-  }
 
   strong {
     color: $navColor;
@@ -117,9 +114,30 @@ $navColor: black;
       }
     }
   }
-
 }
-  @media (min-width: $break1) {
-    display: flex;
+  &#metanav{
+    .level_1{
+      display: flex;
+      justify-content: flex-end;
+      font-family: $font1;
+      >li{
+        margin-left: 0.5rem;
+        color: $color1;
+        a{
+          color: $color1;
+          font-size: $linkSize;
+        }
+        &:after{
+          content: "|";
+          margin-left: 0.5rem;
+          font-size: $linkSize;
+        }
+        &:last-of-type{
+          &:after{
+            display: none;
+          }
+        }
+      }
+    }
   }
 }
