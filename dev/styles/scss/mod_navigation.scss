@@ -4,6 +4,7 @@ $navColor: black;
 // Horizontale Navigation
 .mod_navigation {
   font-family: $font2;
+
   a, span, strong {
     display: block;
   }
@@ -31,134 +32,93 @@ $navColor: black;
   }
 
   &#mainnav {
+  display: none;
+  @media all and (min-width: $break3) {
+    display: block;
     overflow: visible;
-
     .level_1 {
+      margin-left: 1.5rem;
       display: flex;
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: flex-start;
-      align-items: flex-end;
-      padding-right: 0.75rem;
-      @media (min-width: $break3) {
-        font-size: 1rem;
-      }
 
-      > li {
+      >li {
+        font-size: 2.375rem;
+        margin-right: 0.5rem;
+        display: flex;
+        color: white;
         position: relative;
-        text-shadow: 0 3px 6px black;
-
-        > a, > strong {
-          float: left;
-
-          &.first {
-            padding-left: 0;
+        padding-bottom: 5px;
+        &.submenu{
+          .level_2{
+            @include transition();
+            display: block;
+            transform: rotate(3deg) skewY(-3deg) scaleY(0);
+            transform-origin: top;
+            position: absolute;
+            padding: 3rem 1rem 0.5em;
+            margin-left: -1rem;
+            top: 98.6%;
+            min-width: calc(100% + 2rem);
+            background-color: lighten($color1, 10%);
+            z-index: -1;
+            border-radius: 0 0 5px 5px;
+            box-shadow: 1px 4px 5px rgba(0,0,0,0.25);
+            >li{
+              transform: skewY(3deg);
+              a, strong{
+                color: white;
+                font-size: $linkSize;
+              }
+              .level_3{
+                display: block;
+                li{
+                  font-family: $font1;
+                  >a{
+                    display: flex;
+                    &:before{
+                      content: "•";
+                      margin-right: 5px;
+                    }
+                  }
+                }
+              }
+            }
+          }
+          &:hover, &:focus{
+            .level_2{
+              transform: rotate(3deg) skewY(-3deg) scaleY(1);
+            }
           }
         }
 
-        &.active, &.trail {
-          color: $navColor;
-          font-size: 1.3em;
+        a {
+          color: $color3;
 
+          &:focus, &:hover {
+            color: white;
+          }
         }
 
-        &:hover, &:focus {
-          a {
-            text-decoration: dotted white;
-          }
-
-          .level_2 {
-            max-height: 500px;
-            border-bottom-left-radius: $borderRadius;
-            border-bottom-right-radius: $borderRadius;
-            background-color: white;
-          }
-
+        strong {
+          color: white;
         }
 
         &:after {
-          content: '|';
-          margin: 0 1rem;
-          font-size: 1rem;
-          color: $navColor;
-          font-weight: normal;
+          content: "•";
+          margin-left: 0.5rem;
         }
 
-        &:last-child:after {
-          display: none;
-        }
+        &:last-of-type {
+          margin-right: 0;
 
-      }
-    }
-
-    .level_2 {
-      font-family: $font1;
-      position: absolute;
-      top: 1.5em;
-      z-index: 5;
-      // animation bei hover hinzufügen
-      overflow: hidden;
-      max-height: 0px;
-      @include transition;
-
-      strong, a {
-        color: $fontColor;
-      }
-
-      > li {
-        font-size: 1rem;
-        line-height: 1.3;
-        text-shadow: none;
-        @include transition;
-        text-transform: initial;
-        min-width: 30ch;
-
-        > * {
-          border-top: 1px solid rgb(230, 230, 230);
-          padding: 0.5em;
-
-        }
-
-        > span {
-          @include transition;
-          font-weight: bold;
-          color: $navColor;
-        }
-
-        > a {
-          border-bottom: 1px dotted transparent;
-
-          &:hover {
-            border-bottom: 1px dotted $navColor;
-            color: $color1;
-          }
-
-        }
-
-        &.active, &.trail {
-          strong, a {
-            color: $color1;
-            font-weight: 800;
-
-          }
-        }
-
-        &.first {
-
-          > * {
-            border-top: none;
-          }
-        }
-
-        &.last {
-
-          > * {
+          &:after {
+            display: none;
           }
         }
       }
     }
   }
 
+}
   @media (min-width: $break1) {
     display: flex;
   }
