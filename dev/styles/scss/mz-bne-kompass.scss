@@ -18,7 +18,7 @@ body {
         top:0;
         left: 0;
         width: 100%;
-        z-index: 200;
+        z-index: 500;
         .inside{
           @include pageWidth;
           #suche-service-container{
@@ -52,7 +52,7 @@ body {
               margin-left: auto;
               margin-right:20px;
               position: relative;
-              z-index: 300;
+              z-index: 500;
               *{
                 color: white;
               }
@@ -70,11 +70,12 @@ body {
 
     .custom {
       #kopfbild {
-
+        position: relative;
+        z-index: 100;
         .inside {
           .mod_article {
             position: relative;
-            z-index: 100;
+            z-index: 200;
             figure {
               margin: 0;
               img {
@@ -106,7 +107,7 @@ body {
           #header-logo-container{
             @include pageWidth;
             position: relative;
-            z-index: 200;
+            z-index: 400;
             #header-logo, #header-kompass{
               position: absolute;
               right: 20px;
@@ -178,6 +179,10 @@ body {
           @include pageWidth;
           .mod_article{
             @include grid;
+
+            // Catalog Manager
+            @import "ctlg_default";
+            @import "ctlg_veranstalter";
           }
         }
       }
