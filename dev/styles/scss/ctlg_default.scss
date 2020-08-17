@@ -316,6 +316,9 @@
 
         .datenblock {
           grid-template-columns: repeat(8, 1fr);
+          >*{
+            grid-column: span 8;
+          }
 
           .datenblock-links {
             grid-column: span 4;
@@ -406,6 +409,9 @@
 
         .datenblock {
           grid-template-columns: repeat(6, 1fr);
+          >*{
+            grid-column: span 6;
+          }
 
           .datenblock-links, .datenblock-rechts {
             grid-column: span 3;
