@@ -3,6 +3,9 @@
 
    <?php if ( $this->message ): ?>
       <input id="treffer-gesamt" type="hidden" value="<?= $this->entityIndex['1'] ?>">
+      <?php if($this->entityIndex['1'] == 0): ?>
+      <p>Keine Angebote gefunden</p>
+      <?php endif; ?>
    <?php endif; ?>
 
    <?php if ( !empty( $this->createOperation ) && is_array( $this->createOperation ) ): ?>

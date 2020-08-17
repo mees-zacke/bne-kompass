@@ -178,6 +178,9 @@ body {
           @include pageWidth;
           .mod_article{
             @include grid;
+            // Catalog Manager
+            @import "ctlg_default";
+            @import "ctlg_veranstalter";
           }
         }
       }
