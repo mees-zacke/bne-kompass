@@ -1,0 +1,13 @@
+<div class="ctlg_teaser block<?= $this->cssClass ?>">
+
+	<?php if( $this->masterUrl ): ?>
+	<a href="<?= $this->masterUrl ?>" title="Link zum Veranstalter <?= $this->veranstalter_name ?>">
+		<?php endif; ?>
+	<?php if( $this->masterUrl ): ?>
+		<p class="titel"><strong><?= $this->veranstalter_name; ?> »</strong></p>
+    <?php endif; ?>
+
+	<?php if( $this->masterUrl ): ?>
+	</a>
+	<?php endif; ?>
+</div>
