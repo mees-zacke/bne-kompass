@@ -24,9 +24,12 @@
 @import "mod_booknav";
 @import "mod_breadcrumb.scss";
 @import "mod_news.scss";
+// Catalog Manager
+@import "ctlg_default";
+
 // J´s
 @import "j_colorbox";
+
 /* Individueller Kunde */
 @import "mz_be";
-@import "ctlg_default";
 @import "mz-bne-kompass";
