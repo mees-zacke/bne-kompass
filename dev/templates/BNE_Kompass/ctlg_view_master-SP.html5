@@ -1,161 +1,21 @@
-<div class="ctlg_master block">
-    <div class="linke-spalte">
-        <h3 class="titel"><?= $this->angebotstitel ?></h3>
-        <div class="text">
-            <?= $this->angebotsbeschreibung ?>
-        </div>
-        <?php if($this->angebotsbild): ?>
-        <figure class="angebotsbild">
-            <img src="<?= $this->angebotsbild['href'] ?>" alt="<?= $this->angebotsbild['alt'] ?>">
-        </figure>
-        <?php endif; ?>
-        <div class="anbieter">
-            <ul class="anschrift">
-                <li><strong>Anbieter</strong></li>
-                <li><?= $this->bne_veranstalterVeranstalter_name ?></li>
-                <li><?= $this->bne_veranstalterStrasse ?></li>
-                <li><?= $this->bne_veranstalterPlz ?> <?= $his->bne_veranstalterOrt ?></li>
-            </ul>
-            <ul class="kontakt">
-                <?php if( $this->bne_veranstalterTelefonnummer ): ?>
-                <li>Tel.:<a href="tel:<?= $this->bne_veranstalterTelefonnummer ?>"
-                            title="telefonnummer des Anbieters"><?= $this->bne_veranstalterTelefonnummer ?></a></li>
-                <?php endif; ?>
-                <li><a href="mailto:<?= $this->bne_veranstalterEmail ?>" title="E-Mail des Anbieters"><?= $this->
-                    bne_veranstalterEmail ?></a></li>
-                <?php if($this->bne_veranstalterWebseite): ?>
-                <li><a href="<?= $this->bne_veranstalterWebseite ?>" title="Website des Anbieters"><?= $this->
-                    bne_veranstalterWebseite ?></a></li>
-                <?php endif; ?>
-            </ul>
-        </div>
+<div class="ctlg_master schulpartnerschaft block">
+    <div class="partnerschaft-text">
+        <h1>Schulparterschaft zwischen <?= $this->schulname ?> und <?= $this->name_partnerschule ?></h1>
+        <p class="beschreibung"><?= $this->beschreibung ?></p>
     </div>
-    <div class="rechte-spalte">
-
-        <?php if($this->format || angebot_vor_ort || $this->alternative_ort): ?>
-            <div class="format-ort-container datenblock">
-                <?php if($this->format): ?>
-                <div class="format-container datenblock-spalte datenblock-links">
-                    <h4>Angebotsart</h4>
-                    <ul class="format-liste datenliste">
-                        <?php foreach($this->format as $formats): ?>
-                        <li class="format datenliste-punkt"><?= $formats ?></li>
-                        <?php endforeach; ?>
-                    </ul>
-                </div>
-                <?php endif; ?>
-                <?php if($this->angebot_vor_ort || $this->alternative_ort): ?>
-                    <div class="ort-container datenblock-spalte datenblock-rechts">
-                        <h4>Ort</h4>
-
-                        <?php if($this->angebot_vor_ort): ?>
-                            <p>
-                                <?php if($this->bne_veranstalterStrasse): ?>
-                                    <?= $this->bne_veranstalterStrasse ?><br>
-                                <?php endif; ?>
-                                <?php if($this->bne_veranstalterPlz || $this->bne_veranstalterOrt): ?>
-                                    <?php if($this->bne_veranstalterPlz): ?>
-                                        <span><?= $this->bne_veranstalterPlz ?></span>
-                                    <?php endif; ?>
-                                    <?php if($this->bne_veranstalterOrt): ?>
-                                        <span><?= $this->bne_veranstalterOrt ?></span>
-                                    <?php endif; ?>
-                                <?php endif; ?>
-                            </p>
-
-                        <?php else: ?>
-                            <p>
-                            <?php if($this->alternative_strasse): ?>
-                               <?= $this->alternative_strasse ?><br>
-                            <?php endif; ?>
-                            <?php if($this->bne_veranstalterPlz || $this->bne_veranstalterOrt): ?>
-                                <?php if($this->alternative_plz): ?>
-                                    <span><?= $this->alternative_plz ?></span>
-                                <?php endif; ?>
-                                <?php if($this->alternative_plz): ?>
-                                    <span><?= $this->alternative_ort ?></span>
-                                <?php endif; ?>
-                            <?php endif; ?>
-                            </p>
-                        <?php endif; ?>
-                    </div>
-                <?php endif; ?>
+    <div class="partnerschaft-karten">
+        <div class="partnerschaft-schule">
+            <h2><strong><?= $this->schulname ?></strong>, <?= $this->schulort ?></h2>
+            <div class="partnerschaft-map">
+                <?= $this->map_schule ?>
             </div>
-        <?php endif; ?>
-
-        <?php if($this->angebot_schultyp || angebot_leitperspektiven): ?>
-            <div class="ziel-perspektive-container datenblock">
-                <?php if($this->angebot_schultyp): ?>
-                    <div class="ziel-container datenblock-spalte datenblock-links">
-                        <h4>Zielgruppe</h4>
-                        <ul class="ziel-liste datenliste">
-                            <?php foreach($this->angebot_schultyp as $schultypen): ?>
-                                <li class="ziel datenliste-punkt"><?= $schultypen ?></li>
-                            <?php endforeach; ?>
-                        </ul>
-                    </div>
-                <?php endif; ?>
-
-                <?php if($this->angebot_leitperspektiven): ?>
-                    <div class="perspektive-container datenblock-spalte datenblock-rechts">
-                        <h4>Leitperspektiven</h4>
-                        <ul class="perspektive-liste datenliste">
-                            <?php foreach($this->angebot_leitperspektiven as $perspektiven): ?>
-                                <li class="perspektive datenliste-punkt"><?= $perspektiven ?></li>
-                            <?php endforeach; ?>
-                        </ul>
-                    </div>
-                <?php endif; ?>
+        </div>
+        <div class="partnerschaft-partnerschule">
+            <h2><strong><?= $this->name_partnerschule ?></strong>, <?= $this->ort_partnerschule ?>, <?= $this->land_partnerschule ?></h2>
+            <div class="partnerschaft-map">
+                <?= $this->map_partnerschule ?>
             </div>
-        <?php endif; ?>
-
-        <?php if($this->zeitraum || dauer): ?>
-            <div class="zeitraum-uhrzeit-container datenblock">
-                <?php if($this->zeitraum): ?>
-                <div class="zeitraum-container datenblock-spalte datenblock-links">
-                    <h4>Zeitraum</h4>
-                    <p><?= $this->zeitraum ?></p>
-                </div>
-                <?php endif; ?>
-                <?php if($this->dauer): ?>
-                    <div class="dauer-container datenblock-spalte datenblock-rechts">
-                        <h4>Uhrzeit</h4>
-                        <p><?= $this->dauer ?></p>
-                    </div>
-                <?php endif; ?>
-            </div>
-        <?php endif; ?>
-
-        <?php if($this->kosten || besonderheiten): ?>
-            <div class="kosten-info-container datenblock">
-                <?php if($this->kosten): ?>
-                    <div class="kosten-container datenblock-spalte datenblock-links">
-                        <h4>Kosten</h4>
-                        <p><?= $this->kosten ?></p>
-                    </div>
-                <?php endif; ?>
-                <?php if($this->besonderheiten): ?>
-                    <div class="info-container datenblock-spalte datenblock-rechts">
-                        <h4>Info</h4>
-                        <p><?= $this->besonderheiten ?></p>
-                    </div>
-                <?php endif; ?>
-            </div>
-        <?php endif; ?>
-
-        <?php if($this->angebot_sdg): ?>
-            <div class="sdg-container datenblock">
-                    <h4>SDGs</h4>
-                    <ul class="sdg-liste">
-                        <?php foreach($this->angebot_sdg as $sdgs): ?>
-                        <li class="sdg">
-                            <?= $sdgs['sdg_icon'] ?>
-                        </li>
-                        <?php endforeach; ?>
-                    </ul>
-            </div>
-        <?php endif; ?>
-
+        </div>
 
     </div>
     <a href="{{link_url::back}}" title="{{link_title::back}}" class="back">« Zurück</a>

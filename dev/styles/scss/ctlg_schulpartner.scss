@@ -1,7 +1,28 @@
-.ctlg_master {
+.ctlg_teaser.schulpartnerschaft {
+  a {
+    >h1,>h2,>h3,>h4,>h5,>h6 {
+      color: $color1;
+    }
+  }
+}
+
+.ctlg_master.schulpartnerschaft {
   .partnerschaft {
+    &-karten {
+      h1,h2,h3,h4,h5,h6 {
+        margin-bottom: 0;
+      }
+    }
     &-schule, &-partnerschule {
-      grid-column: span 6;
+      margin-bottom: $spaltenAbstand*3;
+    }
+    @media (min-width: $break3) {
+      &-text {
+        grid-column: span 8;
+      }
+      &-karten {
+        grid-column: span 4;
+      }
     }
   }
 }
