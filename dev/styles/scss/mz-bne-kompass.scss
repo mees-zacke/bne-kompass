@@ -256,12 +256,16 @@ body {
   &.spalten-2 {
     #wrapper {
       #container {
-        display: flex;
-        #main {
-          width: 66.666%;
-        }
-        #right {
-          width: 33.333%;
+        @media (min-width: $break2) {
+          display: flex;
+          #main {
+            width: 66.666%;
+            padding-right: 1rem;
+          }
+          #right {
+            width: 33.333%;
+            padding-left: 1rem;
+          }
         }
       }
     }

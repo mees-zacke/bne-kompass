@@ -1,5 +1,12 @@
 .ce_accordion {
   border-top: 1px solid $color1;
+  margin-bottom: 0.25rem;
+
+  &Single {
+    border-top-left-radius: 1.75rem 4rem;
+    border-top-right-radius: 0.75rem 1rem;
+
+  }
   .ui-accordion {
 
     &-header {
@@ -10,10 +17,12 @@
       font-family: $font2;
       letter-spacing: 2px;
       margin-bottom: 0.25em;
-      padding: 1.5rem 1rem;
-      color: $color1;
-      background-color: lighten($color1, 40%);
+      padding: .5rem 1rem;
+      color: white;
+      background-color: $color1;
       cursor: pointer;
+      border-bottom-left-radius: 0.75rem 1rem;
+      border-bottom-right-radius: 1.75rem 4rem;
 
       .ui-icon {
         content: "";
@@ -42,10 +51,9 @@
     &-content {
       padding: 1rem;
       border-left: 2px dashed lighten($color1, 40%);
-      border-right: 2px dashed lighten($color1, 40%);
       border-bottom: 2px solid lighten($color1, 40%);
-      border-bottom-left-radius: 1.5rem;
-      border-bottom-right-radius: 1.5rem;
+      border-bottom-left-radius: 0.75rem 1rem;
+      border-bottom-right-radius: 1.75rem 4rem;
     }
   }
 
