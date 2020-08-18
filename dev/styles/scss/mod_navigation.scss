@@ -118,8 +118,9 @@ $navColor: black;
   &#metanav{
     .level_1{
       display: flex;
-      justify-content: flex-end;
       font-family: $font1;
+      flex-wrap: wrap-reverse;
+      flex-direction: row-reverse;
       >li{
         margin-left: 0.5rem;
         color: $color1;
@@ -127,14 +128,40 @@ $navColor: black;
           color: $color1;
           font-size: $linkSize;
         }
-        &:after{
+        &:first-of-type{
+          order: 3;
+        }
+        &:before{
           content: "|";
-          margin-left: 0.5rem;
+          margin-right: 0.5rem;
           font-size: $linkSize;
         }
-        &:last-of-type{
-          &:after{
+        &:first-of-type, &:last-of-type{
+          &:before{
             display: none;
+          }
+        }
+      }
+      @media all and (min-width: $break2){
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: flex-end;
+        >li{
+          &:after{
+            content: "|";
+            margin-left: 0.5rem;
+            font-size: $linkSize;
+          }
+          &:before{
+            display: none;
+          }
+          &:first-of-type{
+            order: 0;
+          }
+          &:last-of-type{
+            &:after{
+              display: none;
+            }
           }
         }
       }
