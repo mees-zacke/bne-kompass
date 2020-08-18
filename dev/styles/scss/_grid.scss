@@ -4,6 +4,49 @@ $column-gap: 2vw;
 $row-gap: 2vh;
 
 ////////////////////////////////
+/////////// Span ///////////////
+////////////////////////////////
+
+// Standard mobile Größe
+
+@mixin spans($columns, $rows, $column-gap, $row-gap) {
+
+  .span-#{$columns} {
+    grid-column: auto / span ($columns);
+  }
+  // alle Breiten
+
+  @media all and (min-width: $break3) {
+    @for $i from 1 through $columns {
+      .span-#{$i} {
+        grid-column: auto / span ($i);
+      }
+    }
+  }
+}
+
+/////////////////////////////////
+/////////// Start ///////////////
+/////////////////////////////////
+
+// Standard mobile Größe
+
+@mixin starts($columns) {
+
+  // Breakpoint 3
+
+  // Alle Positionen
+
+  @media all and (min-width: $break3) {
+    @for $i from 1 through $columns {
+      .starts-#{$i} {
+        grid-column-start: ($i);
+      }
+    }
+  }
+}
+
+////////////////////////////////
 /////////// Grid ///////////////
 ////////////////////////////////
 
@@ -13,7 +56,9 @@ $row-gap: 2vh;
   grid-template-rows: $rows;
   grid-column-gap: $column-gap;
   grid-row-gap: $row-gap;
-  >* {
+  >*{
     grid-column: span $columns;
   }
+  @include spans($columns, $rows, $column-gap, $row-gap);
+  @include starts($columns);
 }
