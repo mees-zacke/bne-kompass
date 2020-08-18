@@ -1,0 +1,52 @@
+.ce_accordion {
+  border-top: 1px solid $color1;
+  &:hover {
+    cursor: pointer;
+  }
+
+  .ui-accordion {
+
+    &-header {
+      display: grid;
+      grid-template-columns: 2em 1fr;
+      grid-column-gap: 0.5em;
+      align-items: center;
+      font-family: $font2;
+      letter-spacing: 2px;
+      margin-bottom: 0.25em;
+      padding: 1.5rem 1rem;
+      color: $color1;
+      background-color: lighten($color1, 40%);
+      cursor: pointer;
+
+      .ui-icon {
+        content: "";
+        width: 1.5em;
+        height: 1.5em;
+        box-sizing: border-box;
+        padding-left: 0.3rem;
+        display: inline-block;
+        background-image: url("/files/layout/images/bew-kompass.svg");
+        background-repeat: no-repeat;
+      }
+
+      &.ui-state {
+        &-hover, &-active {
+          .ui-icon {
+            content: url("/files/layout/images/checkbox-haken.svg");
+          }
+        }
+      }
+    }
+
+    &-content {
+      padding: 1rem;
+      border-left: 2px dashed lighten($color1, 40%);
+      border-right: 2px dashed lighten($color1, 40%);
+      border-bottom: 2px solid lighten($color1, 40%);
+      border-bottom-left-radius: 1.5rem;
+      border-bottom-right-radius: 1.5rem;
+    }
+  }
+
+}
