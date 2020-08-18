@@ -167,6 +167,7 @@
     a{
       @include button;
     }
+    margin-bottom: 1rem;
   }
 
   > h2 {
@@ -247,9 +248,16 @@
       }
     }
     .operations{
-      padding-top: 1rem;
-      a{
-        @include button;
+      padding-top: 0.5rem;
+      display: flex;
+      justify-content: space-between;
+      li{
+        width: 50%;
+        a{
+          @include button;
+          background-color: white;
+          color: $color1;
+        }
       }
     }
   }
