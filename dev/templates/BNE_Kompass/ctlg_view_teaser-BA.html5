@@ -1,69 +1,103 @@
-<div class="ctlg_teaser block<?= $this->cssClass ?>">
-
-    <?php if( $this->masterUrl ): ?>
-    <a href="<?= $this->masterUrl ?>" title="Link zu <?= $this->angebotstitel ?>">
-        <?php endif; ?>
-        <h3><?= $this->angebotstitel; ?></h3>
-        <div class="teaser-logo-container">
-            <p class="teaser">
-                <?= $this->kurzbeschreibung ?>
-                <span class="weiterlesen">Mehr »</span>
-            </p>
-            <?php if($this->angebotsbild): ?>
-            <figure class="angebotsbild">
-                <img src="<?= $this->angebotsbild['href'] ?>" alt="<?= $this->angebotsbild['alt'] ?>">
-            </figure>
+<?php if($this->valide): ?>
+    <div class="ctlg_teaser block<?= $this->cssClass ?>">
+        <?php if( $this->masterUrl ): ?>
+        <a href="<?= $this->masterUrl ?>" title="Link zu <?= $this->angebotstitel ?>">
             <?php endif; ?>
-        </div>
-        <div class="format-ort-container datenblock">
-            <div class="format-container datenblock-spalte datenblock-links">
-                <h4>Angebotsart</h4>
-                <ul class="format-liste datenliste">
-                    <?php foreach($this->format as $formats): ?>
-                    <li class="format datenliste-punkt"><?= $formats ?></li>
-                    <?php endforeach; ?>
-                </ul>
+            <h3><?= $this->angebotstitel; ?></h3>
+            <div class="teaser-logo-container">
+                <p class="teaser">
+                    <?= $this->kurzbeschreibung ?>
+                    <span class="weiterlesen">Mehr »</span>
+                </p>
+                <?php if($this->angebotsbild): ?>
+                <figure class="angebotsbild">
+                    <img src="<?= $this->angebotsbild['href'] ?>" alt="<?= $this->angebotsbild['alt'] ?>">
+                </figure>
+                <?php endif; ?>
+            </div>
+            <div class="format-ort-container datenblock">
+                <div class="format-container datenblock-spalte datenblock-links">
+                    <h4>Angebotsart</h4>
+                    <ul class="format-liste datenliste">
+                        <?php foreach($this->format as $formats): ?>
+                        <li class="format datenliste-punkt"><?= $formats ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                </div>
+
+                <?php if($this->angebot_vor_ort || $this->alternative_ort): ?>
+                    <div class="ort-container datenblock-spalte datenblock-rechts">
+                        <h4>Ort</h4>
+
+                        <?php if($this->angebot_vor_ort): ?>
+                        <p>
+                            <?php if($this->bne_veranstalterStrasse): ?>
+                                <?= $this->bne_veranstalterStrasse ?><br>
+                            <?php endif; ?>
+                            <?php if($this->bne_veranstalterPlz || $this->bne_veranstalterOrt): ?>
+                                <?php if($this->bne_veranstalterPlz): ?>
+                                    <span><?= $this->bne_veranstalterPlz ?></span>
+                                <?php endif; ?>
+                                <?php if($this->bne_veranstalterOrt): ?>
+                                    <span><?= $this->bne_veranstalterOrt ?></span>
+                                <?php endif; ?>
+                            <?php endif; ?>
+                        </p>
+
+                        <?php else: ?>
+                        <p>
+                            <?php if($this->alternative_strasse): ?>
+                                <?= $this->alternative_strasse ?><br>
+                            <?php endif; ?>
+                            <?php if($this->bne_veranstalterPlz || $this->bne_veranstalterOrt): ?>
+                                <?php if($this->alternative_plz): ?>
+                                    <span><?= $this->alternative_plz ?></span>
+                                <?php endif; ?>
+                                <?php if($this->alternative_plz): ?>
+                                    <span><?= $this->alternative_ort ?></span>
+                                <?php endif; ?>
+                            <?php endif; ?>
+                        </p>
+                        <?php endif; ?>
+                    </div>
+                <?php endif; ?>
             </div>
 
-            <?php if($this->angebot_vor_ort || $this->alternative_ort): ?>
-                <div class="ort-container datenblock-spalte datenblock-rechts">
-                    <h4>Ort</h4>
+        <?php if( $this->masterUrl ): ?>
+          </a>
+        <?php endif; ?>
 
-                    <?php if($this->angebot_vor_ort): ?>
-                    <p>
-                        <?php if($this->bne_veranstalterStrasse): ?>
-                            <?= $this->bne_veranstalterStrasse ?><br>
-                        <?php endif; ?>
-                        <?php if($this->bne_veranstalterPlz || $this->bne_veranstalterOrt): ?>
-                            <?php if($this->bne_veranstalterPlz): ?>
-                                <span><?= $this->bne_veranstalterPlz ?></span>
-                            <?php endif; ?>
-                            <?php if($this->bne_veranstalterOrt): ?>
-                                <span><?= $this->bne_veranstalterOrt ?></span>
-                            <?php endif; ?>
-                        <?php endif; ?>
-                    </p>
+        <?php if ( !empty( $this->operations ) && is_array( $this->operations ) ): ?>
+        <ul class="operations">
+            <?php foreach( $this->operations as $arrOperation ): ?>
+            <li class="<?= $arrOperation['class'] ?>">
+                <a href="<?= $arrOperation['href'] ?>" title="<?= $arrOperation['title']; ?>" <?= $arrOperation['attributes'] ?>>
+                <span class="ctlg_operation_icon"><?= $arrOperation['image']; ?></span> <?= $arrOperation['title']; ?>
+                </a>
+            </li>
+            <?php endforeach; ?>
+        </ul>
+        <?php endif; ?>
 
-                    <?php else: ?>
-                    <p>
-                        <?php if($this->alternative_strasse): ?>
-                            <?= $this->alternative_strasse ?><br>
-                        <?php endif; ?>
-                        <?php if($this->bne_veranstalterPlz || $this->bne_veranstalterOrt): ?>
-                            <?php if($this->alternative_plz): ?>
-                                <span><?= $this->alternative_plz ?></span>
-                            <?php endif; ?>
-                            <?php if($this->alternative_plz): ?>
-                                <span><?= $this->alternative_ort ?></span>
-                            <?php endif; ?>
-                        <?php endif; ?>
-                    </p>
-                    <?php endif; ?>
-                </div>
-            <?php endif; ?>
-        </div>
+        <?php if ( !empty( $this->relations ) && is_array( $this->relations ) ): ?>
+        <ul class="relations">
+            <?php foreach( $this->relations as $arrRelation ): ?>
+            <li><a href="<?= $arrRelation['href'] ?>" title="<?= $arrRelation['description'] ?>"><span class="catalog_relation_icon"><?= $arrRelation['image']; ?></span> <?= $arrRelation['title']; ?></a></li>
+            <?php endforeach; ?>
+        </ul>
+        <?php endif; ?>
 
-    <?php if( $this->masterUrl ): ?>
-      </a>
-    <?php endif; ?>
-</div>
+        <?php if ( !empty( $this->downloads ) && is_array( $this->downloads ) ): ?>
+        <ul class="downloads">
+            <?php foreach( $this->downloads as $strType => $arrDownload ): ?>
+            <li><a href="<?= $arrDownload['href'] ?>" rel="nofollow" title="<?= $arrDownload['title'] ?>"><span class="catalog_<?= $strType ?>_icon"><?= $arrDownload['image']; ?></span> <?= $arrDownload['title']; ?></a></li>
+            <?php endforeach; ?>
+        </ul>
+        <?php endif; ?>
+
+        <?php if ( $this->useSocialSharingButtons ): ?>
+        <?= $this->socialSharingButtons; ?>
+        <?php endif; ?>
+
+    </div>
+<?php endif; ?>

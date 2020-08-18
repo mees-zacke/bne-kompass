@@ -163,6 +163,12 @@
 .mod_catalogUniversalView {
   grid-column: span 12;
 
+  .new-operator{
+    a{
+      @include button;
+    }
+  }
+
   > h2 {
     margin: 0;
     padding-bottom: 1em;
@@ -238,6 +244,12 @@
             }
           }
         }
+      }
+    }
+    .operations{
+      padding-top: 1rem;
+      a{
+        @include button;
       }
     }
   }

@@ -1,0 +1,104 @@
+<div class="ctlg_master block<?= $this->cssClass ?>">
+
+
+	<div class="linke-spalte">
+			<h2>Ihre Einrichtung</h2>
+
+		<div class="datenblock">
+			<h3>Einrichtung</h3>
+			<div class="name datenblock-spalte">
+				<strong>Name</strong>
+				<p><?php if( $this->veranstalter_name ): ?><?= $this->veranstalter_name ?><?php else: ?>N/A<?php endif; ?></p>
+			</div>
+			<div class="beschreibung datenblock-spalte">
+				<strong>Beschreibung</strong>
+				<p><?php if( $this->beschreibung ): ?><?= $this->beschreibung ?><?php else: ?>N/A<?php endif; ?></p>
+			</div>
+			<div class="logo datenblock-spalte">
+				<strong>Logo</strong>
+				<p><?php if( $this->logo_einrichtung ): ?><?= $this->logo_einrichtung ?><?php else: ?>N/A<?php endif; ?></p>
+			</div>
+		</div>
+		<div class="datenblock">
+			<h3>Anschrift</h3>
+			<div class="strasse datenblock-spalte">
+				<strong>Straße</strong>
+				<p><?php if( $this->strasse ): ?><?= $this->strasse ?><?php else: ?>N/A<?php endif; ?></p>
+			</div>
+			<div class="ort datenblock-spalte">
+				<strong>Ort</strong>
+				<p><?php if( $this->plz ): ?><?= $this->plz ?> <?= $this->ort ?><?php else: ?>N/A<?php endif; ?></p>
+			</div>
+			<div class="koordinaten datenblock-spalte">
+				<div>
+					<strong>Breitengrad</strong>
+					<p><?php if( $this->breitengrad ): ?><?= $this->breitengrad ?><?php else: ?>N/A<?php endif; ?></p>
+				</div>
+			</div>
+			<div class="koordinaten datenblock-spalte">
+				<div>
+					<strong>Längengrad</strong>
+					<p><?php if( $this->laengengrad ): ?><?= $this->laengengrad ?><?php else: ?>N/A<?php endif; ?></p>
+				</div>
+			</div>
+		</div>
+		<div class="datenblock">
+			<h3>Kontaktdaten</h3>
+			<div class="email datenblock-spalte">
+				<strong>E-Mail</strong>
+				<p><?php if( $this->email ): ?><?= $this->email ?><?php else: ?>N/A<?php endif; ?></p>
+			</div>
+			<div class="telefon datenblock-spalte">
+				<strong>Telefonnummer</strong>
+				<p><?php if( $this->telefonnummer ): ?><?= $this->telefonnummer ?><?php else: ?>N/A<?php endif; ?></p>
+			</div>
+			<div class="mobil datenblock-spalte">
+				<strong>Mobilnummer</strong>
+				<p><?php if( $this->mobile_number ): ?><?= $this->mobile_number ?><?php else: ?>N/A<?php endif; ?></p>
+			</div>
+			<div class="website datenblock-spalte">
+				<strong>Website</strong>
+				<p><?php if( $this->webseite ): ?><?= $this->webseite ?><?php else: ?>N/A<?php endif; ?></p>
+			</div>
+		</div>
+
+
+		<?php if ( !empty( $this->operations ) && is_array( $this->operations ) ): ?>
+		<ul class="operations">
+			<?php foreach( $this->operations as $arrOperation ): ?>
+			<li class="<?= $arrOperation['class'] ?>">
+				<a href="<?= $arrOperation['href'] ?>" title="<?= $arrOperation['title']; ?>" <?= $arrOperation['attributes'] ?>>
+				<span class="ctlg_operation_icon"><?= $arrOperation['image']; ?></span> <?= $arrOperation['title']; ?>
+				</a>
+			</li>
+			<?php endforeach; ?>
+		</ul>
+		<?php endif; ?>
+
+		<?php if ( !empty( $this->relations ) && is_array( $this->relations ) ): ?>
+		<ul class="relations">
+			<?php foreach( $this->relations as $arrRelation ): ?>
+			<li><a href="<?= $arrRelation['href'] ?>" title="<?= $arrRelation['description'] ?>"><span class="catalog_relation_icon"><?= $arrRelation['image']; ?></span> <?= $arrRelation['title']; ?></a></li>
+			<?php endforeach; ?>
+		</ul>
+		<?php endif; ?>
+
+		<?php if ( !empty( $this->downloads ) && is_array( $this->downloads ) ): ?>
+		<ul class="downloads">
+			<?php foreach( $this->downloads as $strType => $arrDownload ): ?>
+			<li><a href="<?= $arrDownload['href'] ?>" rel="nofollow" title="<?= $arrDownload['title'] ?>"><span class="catalog_<?= $strType ?>_icon"><?= $arrDownload['image']; ?></span> <?= $arrDownload['title']; ?></a></li>
+			<?php endforeach; ?>
+		</ul>
+		<?php endif; ?>
+
+		<?php if ( $this->useSocialSharingButtons ): ?>
+		<?= $this->socialSharingButtons; ?>
+		<?php endif; ?>
+	</div>
+	<div class="rechte-spalte">
+		<h2>Ihre Angebote</h2>
+		<div class="angebote-liste">
+			{{insert_module::30}}
+		</div>
+	</div>
+</div>

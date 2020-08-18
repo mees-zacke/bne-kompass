@@ -18,7 +18,7 @@
 }
 
 .mod_catalogUniversalView.veranstalter-FE{
-  .ctlg_teaser {
+  .ctlg_master {
     @include grid();
     .linke-spalte {
       grid-column: span 12;
@@ -33,6 +33,11 @@
           p {
             font-weight: 400;
           }
+        }
+      }
+      .operations{
+        a{
+          @include button;
         }
       }
     }
