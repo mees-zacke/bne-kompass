@@ -173,10 +173,10 @@ body {
     //////// CONTAINER ////////
     ////////////////////////////
     #container {
+      @include pageWidth;
       // Anfang #main
       #main {
         .inside {
-          @include pageWidth;
           .mod_article{
             @include grid;
 
@@ -252,4 +252,18 @@ body {
   }
 
   // Ende #wrapper
+
+  &.spalten-2 {
+    #wrapper {
+      #container {
+        display: flex;
+        #main {
+          width: 66.666%;
+        }
+        #right {
+          width: 33.333%;
+        }
+      }
+    }
+  }
 }

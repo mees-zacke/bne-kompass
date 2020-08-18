@@ -1,9 +1,5 @@
 .ce_accordion {
   border-top: 1px solid $color1;
-  &:hover {
-    cursor: pointer;
-  }
-
   .ui-accordion {
 
     &-header {
@@ -37,6 +33,10 @@
           }
         }
       }
+      &:hover {
+        cursor: pointer;
+      }
+
     }
 
     &-content {
