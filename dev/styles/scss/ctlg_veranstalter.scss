@@ -16,3 +16,37 @@
     }
   }
 }
+
+.mod_catalogUniversalView.veranstalter-FE{
+  .ctlg_teaser {
+    @include grid();
+    .linke-spalte {
+      grid-column: span 12;
+
+      .datenblock {
+        background: none;
+
+        .datenblock-spalte {
+          background-color: lighten($color1, 50%);
+          padding-top: 1rem;
+
+          p {
+            font-weight: 400;
+          }
+        }
+      }
+    }
+    .rechte-spalte{
+      grid-column: span 12;
+    }
+
+    @media all and (min-width: $break3) {
+      .linke-spalte {
+        grid-column: span 6;
+      }
+      .rechte-spalte {
+        grid-column: span 6;
+      }
+    }
+  }
+}

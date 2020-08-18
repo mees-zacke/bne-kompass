@@ -150,23 +150,7 @@
 
       .widget-submit {
         button{
-          @include transition();
-          display: block;
-          width: 100%;
-          padding: 0.5em;
-          background-color: $color1;
-          color: white;
-          font-weight: 600;
-          border: 1px solid white;
-          cursor: pointer;
-          outline: none;
-
-          &:hover, &:focus {
-            background-color: white;
-            border-color: $color1;
-            color: $color1;
-          }
-
+          @include button;
         }
       }
     }
