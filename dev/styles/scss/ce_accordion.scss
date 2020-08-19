@@ -2,11 +2,16 @@
   border-top: 1px solid $color1;
   margin-bottom: 0.25rem;
 
+  &:focus {
+    outline: none;
+  }
+
   &Single {
     border-top-left-radius: 1.75rem 4rem;
     border-top-right-radius: 0.75rem 1rem;
 
   }
+
   .ui-accordion {
 
     &-header {
@@ -24,6 +29,10 @@
       border-bottom-left-radius: 0.75rem 1rem;
       border-bottom-right-radius: 1.75rem 4rem;
 
+      &:focus {
+        outline: none;
+      }
+
       .ui-icon {
         content: "";
         width: 1.5em;
@@ -38,10 +47,11 @@
       &.ui-state {
         &-hover, &-active {
           .ui-icon {
-            content: url("/files/layout/images/checkbox-haken.svg");
+            content: url("/files/layout/images/checkbox-haken-weis.svg");
           }
         }
       }
+
       &:hover {
         cursor: pointer;
       }
