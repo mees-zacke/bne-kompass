@@ -35,8 +35,12 @@ jQuery(function ($) {
 
   function countHits(){
     var count = $('.mod_catalogUniversalView #treffer-gesamt').val();
-    console.log(count);
-    $('.treffer-count').append(count);
+    if (($('.ctlg_form_field.checkbox').find(':checked').length > 0) || ($('#id_form_volltextsuche').val() != 0)){
+      $('.treffer-count').append(count);
+    }
+    else {
+      $('.treffer-count').append('Alle');
+    }
   }
 
 // BA Filter ACC bleiben checked
@@ -46,8 +50,7 @@ jQuery(function ($) {
           $('.ctlg_form_field.checkbox').each(function(){
           if ($(this).find(':checked').length > 0){
             $(this).children('.label').addClass('accordeon-checked');
-            console.log();
-
+            $(this).children('.accordeon-body').css('display', 'block');
           }
         });
 

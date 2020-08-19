@@ -20,11 +20,6 @@
 	         <?php if( $this->reset ): ?><p class="reset"><a href="/bildungsangebote/" id="id_reset_4">Auswahl löschen</a></p> <?php endif; ?>
 		</div>
    <?php endif; ?>
-   <div class="treffer-container">
-	<p class="treffer">
-		Treffer..........<span class="treffer-count"></span>
-	</p>
-   </div>
 </form>
 <?php if ( $this->trigger ): ?>
 <script>document.addEventListener('DOMContentLoaded',function(){var objForm = document.getElementById('id_form_<?= $this->triggerId ?>');objForm.submit();})</script>
