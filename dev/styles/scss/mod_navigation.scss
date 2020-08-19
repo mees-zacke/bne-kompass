@@ -51,7 +51,7 @@ $navColor: black;
             transform: rotate(3deg) skewY(-3deg) scaleY(0);
             transform-origin: top;
             position: absolute;
-            padding: 1rem 1rem 0.5em;
+            padding: 2rem 1rem 0.5em;
             margin-left: -1rem;
             top: 98.6%;
             min-width: calc(100% + 2rem);
@@ -62,8 +62,17 @@ $navColor: black;
             >li{
               transform: skewY(3deg);
               a, strong{
-                color: white;
+                display: block;
                 font-size: $linkSize;
+              }
+              strong{
+                color: $color4;
+              }
+              a{
+                color: white;
+                &:hover{
+                  color: $color4;
+                }
               }
               .level_3{
                 display: block;
