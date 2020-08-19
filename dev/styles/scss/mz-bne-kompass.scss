@@ -73,16 +73,13 @@ body {
         position: relative;
         z-index: 200;
         .inside {
-          .mod_article, .mod_randomImage {
+          .mod_article {
             position: relative;
             z-index: 200;
             figure {
               margin: 0;
-              .caption {
-                display: none;
-              }
               img {
-                width: 100%;
+
               }
             }
           }
