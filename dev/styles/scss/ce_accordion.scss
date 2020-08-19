@@ -34,6 +34,7 @@
       }
 
       .ui-icon {
+        @include transition();
         content: "";
         width: 1.5em;
         height: 1.5em;
@@ -45,9 +46,14 @@
       }
 
       &.ui-state {
-        &-hover, &-active {
+        &-hover{
           .ui-icon {
-            content: url("/files/layout/images/checkbox-haken-weis.svg");
+            background-image: url("/files/layout/images/checkbox-haken-weis-bne-hover.svg");
+          }
+        }
+        &-active {
+          .ui-icon {
+            background-image: url("/files/layout/images/checkbox-haken-weis-bne.svg");
           }
         }
       }

@@ -1,0 +1,11 @@
+<svg id="kontakt-path" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 102 114.67">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #f07e3a;
+      }
+    </style>
+  </defs>
+  <title>kontakt</title>
+  <path class="cls-1" d="M334,159H436v93.25a7.9,7.9,0,0,1-6.67,7.8l-86.21,13.52a7.9,7.9,0,0,1-9.12-7.8Z" transform="translate(-334 -159)"/>
+</svg>
