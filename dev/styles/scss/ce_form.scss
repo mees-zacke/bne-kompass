@@ -132,15 +132,13 @@
               &.erklaerung {
                 font-weight: 600;
               }
-
-              &:not(.erklaerung) {
+            }
+            &-textarea{
+              label{
                 padding-bottom: 0;
                 padding-top: 1rem;
-
-                p {
-                  max-width: 60%;
-                  margin: 0;
-                }
+                max-width: 60%;
+                margin-bottom: 1rem;
               }
 
             }

@@ -7,7 +7,6 @@
             <div class="teaser-logo-container">
                 <p class="teaser">
                     <?= $this->kurzbeschreibung ?>
-                    <span class="weiterlesen">Mehr »</span>
                 </p>
                 <?php if($this->angebotsbild): ?>
                 <figure class="angebotsbild">
@@ -16,6 +15,7 @@
                 <?php endif; ?>
             </div>
             <div class="format-ort-container datenblock">
+
                 <div class="format-container datenblock-spalte datenblock-links">
                     <h4>Angebotsart</h4>
                     <ul class="format-liste datenliste">
@@ -26,6 +26,7 @@
                 </div>
 
                 <?php if($this->angebot_vor_ort || $this->alternative_ort): ?>
+
                     <div class="ort-container datenblock-spalte datenblock-rechts">
                         <h4>Ort</h4>
 
@@ -61,8 +62,8 @@
                         <?php endif; ?>
                     </div>
                 <?php endif; ?>
+                <p class="weiterlesen">Mehr dazu »</p>
             </div>
-
         <?php if( $this->masterUrl ): ?>
           </a>
         <?php endif; ?>

@@ -2,6 +2,7 @@
 
 .ce_catalogFilterForm {
   grid-column: span 12;
+  margin-bottom: 4rem;
 
   form {
     background-color: lighten($color1, 50%);
@@ -166,6 +167,7 @@
   .ctlg_teaser, .ctlg_master {
     .datenblock {
       @include grid();
+      @include transition();
       padding: 1em 0;
       background-color: lighten($color1, 50%);
 
@@ -256,13 +258,17 @@
     &.first{
       a{
         border-top: 2px solid $color1;
+        margin-top: 0;
       }
     }
     a {
+      border-top: 2px solid transparent;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
       padding-top: 1em;
-      padding-bottom: 0.5em;
       border-bottom: 1px solid $color1;
       display: block;
+      border-bottom-right-radius: 1rem;
 
       > h3 {
         text-decoration: none;
@@ -282,12 +288,6 @@
           grid-column: span 12;
           color: $fontColor;
           margin-bottom: 0;
-
-          .weiterlesen {
-            color: $color1;
-            font-weight: 600;
-            @include transition();
-          }
         }
 
         .angebotsbild {
@@ -296,21 +296,51 @@
         }
       }
 
+      .datenblock{
+        padding-bottom: 0;
+        border-bottom-right-radius: 1rem;
+      }
+
+      .weiterlesen {
+        @include transition();
+        font-size: $linkSize;
+        padding: 0.5em 1rem;
+        background-color: $color1;
+        color: white;
+        font-weight: 600;
+        cursor: pointer;
+        outline: none;
+        margin-left: auto;
+        margin-bottom: 0;
+        border-top: 1px solid $color1;
+        border-top-left-radius: 1rem;
+        border-bottom-right-radius: 1rem;
+      }
+
       &:hover, &:focus {
+        border-top: 2px solid $color1;
         background-color: lighten($color1, 50%);
+        border-top-right-radius: 75px;
 
         .teaser-logo-container {
           .teaser {
-            .weiterlesen {
-              color: $color2;
-            }
           }
+        }
+        .datenblock{
+          background-color: lighten($color1, 45%);
+        }
+
+        .weiterlesen {
+          color: $color1;
+          background-color: lighten($color1,50%);
         }
       }
     }
 
     @media all and (min-width: $break3) {
       a {
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 1rem;
         .teaser-logo-container {
           grid-template-columns: repeat(8, 1fr);
 
@@ -327,6 +357,8 @@
 
         .datenblock {
           grid-template-columns: repeat(8, 1fr);
+          border-bottom-right-radius: 0;
+          border-bottom-left-radius: 1rem;
           >*{
             grid-column: span 8;
           }
@@ -339,6 +371,12 @@
           .datenblock-rechts {
             grid-column: span 4;
           }
+        }
+
+        .weiterlesen {
+          margin-left: 0;
+          margin-right: auto;
+          border-radius: 0 1rem 0 1rem;
         }
       }
     }

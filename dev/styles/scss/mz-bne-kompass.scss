@@ -114,6 +114,7 @@ body {
                   width: 2.375rem;
                   height: 2.375rem;
                   background-color: white;
+                  margin-bottom: 0.75em;
                 }
               }
 
@@ -144,7 +145,7 @@ body {
               overflow: visible;
 
               figure {
-                padding: 35% 25%;
+                padding: 35% 18%;
                 background-color: white;
                 border-radius: 50%;
                 box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.5);
@@ -160,6 +161,14 @@ body {
               }
             }
             @media all and (min-width: $break3) {
+              #header-logo, #header-kompass {
+                figure {
+                  width: 250px;
+                  height: 250px;
+                }
+              }
+            }
+            @media all and (min-width: 1300px) {
               #header-logo, #header-kompass {
                 figure {
                   width: 300px;
