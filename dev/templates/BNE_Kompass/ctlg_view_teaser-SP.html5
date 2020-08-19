@@ -10,6 +10,7 @@
                 <strong><?= $this->schulname ?></strong>, <?= $this->schulort ?><br />
                 <strong><?= $this->name_partnerschule ?></strong>, <?= $this->ort_partnerschule ?>, <?= $this->land_partnerschule ?>
             </p>
+            <p class="weiterlesen">Mehr dazu »</p>
         </div>
 
 
