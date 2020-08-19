@@ -39,6 +39,18 @@ jQuery(function ($) {
     $('.treffer-count').append(count);
   }
 
+// BA Filter ACC bleiben checked
 
+  $(document).ready(function stayChecked() {
+
+          $('.ctlg_form_field.checkbox').each(function(){
+          if ($(this).find(':checked').length > 0){
+            $(this).children('.label').addClass('accordeon-checked');
+            console.log();
+
+          }
+        });
+
+  });
 
 });
