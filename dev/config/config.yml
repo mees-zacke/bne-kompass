@@ -6,7 +6,7 @@ contao:
             jpeg_quality: 100
         sizes:
             kopfbild:
-                width: 500
+                width: 3000
                 height: 300
                 resizeMode: 'crop'
                 zoom: 100
@@ -14,36 +14,57 @@ contao:
                 densities: '1x, 2x'
                 lazy_loading: true
                 items:
-                    -   width: 768
-                        height: 300
-                        resizeMode: 'crop'
-                        zoom: 100
-                        densities: '0.5x, 2x'
-                        sizes: '100vw'
-                        media: '(max-width:767px)'
-                    -   width: 1024
-                        height: 300
-                        resizeMode: 'crop'
-                        zoom: 100
-                        densities: '0.5x, 2x'
-                        sizes: '100vw'
-                        media: '(min-width:768px) and (max-width:1023px)'
                     -   width: 1920
                         height: 300
                         resizeMode: 'crop'
                         zoom: 100
                         densities: '0.5x, 2x'
                         sizes: '100vw'
-                        media: '(min-width:1024px) and (max-width: 1920px)'
-                    -   width: 3000
+                        media: '(max-width: 1920px)'
+                    -   width: 1024
                         height: 300
                         resizeMode: 'crop'
                         zoom: 100
                         densities: '0.5x, 2x'
                         sizes: '100vw'
-                        media: '(min-width:1921px)'
-
-
+                        media: '(max-width:1024px)'
+                    -   width: 768
+                        height: 300
+                        resizeMode: 'crop'
+                        zoom: 100
+                        densities: '0.5x, 2x'
+                        sizes: '100vw'
+                        media: '(max-width:768px)'
+            kopfbild-gross:
+                width: 3000
+                height: 768
+                resizeMode: 'crop'
+                zoom: 100
+                cssClass: 'kopfbild-gross'
+                densities: '1x, 2x'
+                lazy_loading: true
+                items:
+                    -   width: 1920
+                        height: 768
+                        resizeMode: 'crop'
+                        zoom: 100
+                        densities: '1x, 2x'
+                        sizes: '100vw'
+                        media: '(max-width: 1920px)'
+                    -   width: 1024
+                        height: 575
+                        resizeMode: 'crop'
+                        zoom: 100
+                        densities: '1x, 2x'
+                        sizes: '100vw'
+                        media: '(max-width:1024px)'
+                    -   width: 768
+                        height: 575
+                        resizeMode: 'crop'
+                        zoom: 100
+                        densities: '1x, 2x'
+                        sizes: '100vw'
+                        media: '(max-width:768px)'
             2zu1:
                 width: 1920
                 height: 960

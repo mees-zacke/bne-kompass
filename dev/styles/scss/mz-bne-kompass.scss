@@ -12,56 +12,48 @@ body {
     ////////////////////////////
     #header {
       display: none;
-      @media all and (min-width: $break1) {
+      @media all and (min-width: $break1){
         display: block;
         position: absolute;
-        top: 0;
+        top:0;
         left: 0;
         width: 100%;
         z-index: 500;
-        .inside {
+        .inside{
           @include pageWidth;
-
-          #suche-service-container {
+          #suche-service-container{
             display: flex;
-
-            #header-suche-container {
+            #header-suche-container{
               margin: 20px 0 0 20px;
-
-              .formbody {
+              .formbody{
                 display: flex;
                 background-color: white;
                 border-radius: 2px;
                 width: 200px;
-
-                .widget-submit {
+                .widget-submit{
                   width: 1.5rem;
                   height: 1.5rem;
                   margin-right: 5px;
                   padding-left: 5px;
                 }
-
-                .widget-text {
+                .widget-text{
                   width: 100%;
-
-                  input {
+                  input{
                     width: 100%;
                     border: none;
                   }
                 }
               }
             }
-
-            #header-servicenav-container {
+            #header-servicenav-container{
               clip-path: polygon(0 0, 0 100%, 100% 90%, 100% 0);
               background-color: $color1;
               padding: 20px 10px;
               margin-left: auto;
-              margin-right: 20px;
+              margin-right:20px;
               position: relative;
               z-index: 500;
-
-              * {
+              *{
                 color: white;
               }
             }
@@ -80,84 +72,72 @@ body {
       #kopfbild {
         position: relative;
         z-index: 200;
-
         .inside {
           .mod_article {
             position: relative;
             z-index: 200;
-
             figure {
               margin: 0;
-
               img {
 
               }
             }
           }
+          #mainnav-logo-container{
+              #mainnav-logo-container-outer{
+                padding-top: 5%;
+                background-color: $color1;
+                transform: rotate(-3deg) translate(0, -45%);
+                #mainnav-logo-container-inner{
+                  @include pageWidth;
+                  display: flex;
+                  align-items: center;
 
-          #mainnav-logo-container {
-            #mainnav-logo-container-outer {
-              padding-top: 5%;
-              background-color: $color1;
-              transform: rotate(-3deg) translate(0, -45%);
+                  .mm-opener{
+                    width: 2.375rem;
+                    height: 2.375rem;
+                    background-color: white;
+                  }
+                }
+                @media all and (min-width: 1600px){
 
-              #mainnav-logo-container-inner {
-                @include pageWidth;
-                display: flex;
-                align-items: center;
-
-                .mm-opener {
-                  width: 2.375rem;
-                  height: 2.375rem;
-                  background-color: white;
                 }
               }
-
-              @media all and (min-width: 1600px) {
-
-              }
-            }
           }
-
-          #header-logo-container {
+          #header-logo-container{
             @include pageWidth;
             position: relative;
             z-index: 400;
-
-            #header-logo, #header-kompass {
+            #header-logo, #header-kompass{
               position: absolute;
               right: 20px;
               bottom: 0;
-
-              figure {
+              figure{
                 box-sizing: border-box;
                 width: 150px;
                 height: 150px;
               }
             }
-
-            #header-logo {
+            #header-logo{
               overflow: visible;
-
-              figure {
+              figure{
                 padding: 35% 25%;
                 background-color: white;
                 border-radius: 50%;
-                box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.5);
+                box-shadow: 0 0 5px 5px rgba(0,0,0,0.5);
               }
             }
-
-            @media all and (min-width: $break2) {
-              #header-logo, #header-kompass {
-                figure {
+            @media all and (min-width: $break2){
+              #header-logo, #header-kompass{
+                figure{
                   width: 200px;
                   height: 200px;
                 }
               }
             }
-            @media all and (min-width: $break3) {
-              #header-logo, #header-kompass {
-                figure {
+            @media all and (min-width: $break3){
+              #header-logo, #header-kompass{
+                figure{
                   width: 300px;
                   height: 300px;
                 }
@@ -189,7 +169,7 @@ body {
       }
     }
 
-    /////////////////////////////
+      /////////////////////////////
     //////// CONTAINER ////////
     ////////////////////////////
     #container {
@@ -197,7 +177,7 @@ body {
       // Anfang #main
       #main {
         .inside {
-          .mod_article {
+          .mod_article{
             @include grid;
 
             // Catalog Manager
@@ -219,108 +199,110 @@ body {
     /////////////////////////////
     //////// FOOTER ////////
     ////////////////////////////
-    #meta {
-      .inside {
-        @include pageWidth;
-        margin-top: 3rem;
+      #meta{
+        .inside{
+          @include pageWidth;
+          margin-top: 3rem;
+        }
       }
-    }
 
-    #footer {
-      margin-top: 0.5rem;
-      background-color: $color3;
-
-      .inside {
-        @include pageWidth;
-        padding-top: 0.75rem;
-
-        .ce_text {
-          margin-bottom: 3rem;
-
-          p {
-            margin-bottom: 0;
-            text-align: end;
-            font-size: $linkSize;
-            margin-left: 0.5rem;
-            padding-left: 0;
-            margin-bottom: 0;
-            display: inline-block;
-
-            &:before {
-              display: none;
-            }
-
-            &:first-of-type {
-              &:after {
-                content: ",";
-                margin-left: 0;
+      #footer{
+        margin-top: 0.5rem;
+        background-color: $color3;
+        .inside{
+          @include pageWidth;
+          padding-top: 0.75rem;
+          .ce_text{
+            margin-bottom: 3rem;
+            ul{
+              margin-bottom: 0;
+              text-align: end;
+              li{
                 font-size: $linkSize;
-              }
-            }
-
-          }
-
-          @media all and (min-width: $break3) {
-            p {
-              display: block;
-              margin-bottom: 0.5rem;
-
-              &:last-of-type {
-                &:after {
+                margin-left: 0.5rem;
+                padding-left: 0;
+                margin-bottom: 0;
+                display: inline-block;
+                &:before{
                   display: none;
                 }
-              }
-            }
-          }
-        }
-
-        #footer-logos {
-          background-color: white;
-          padding: 5rem 1rem 0;
-          width: 95%;
-          margin: auto;
-          clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 15%);
-
-          .ce_gallery {
-            ul {
-              li {
-                width: 33.33%;
-
-                > * {
-                  margin: 3vw;
-                }
-              }
-            }
-          }
-
-          .ce_text {
-            display: none;
-            text-align: end;
-            font-size: $linkSize;
-          }
-
-          @media all and (min-width: $break2) {
-            padding: 3rem 1rem 0;
-            clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 40%);
-            .ce_gallery {
-              ul {
-                li {
-                  width: 10%;
-
-                  > * {
-                    margin: 1vw;
+                &:first-of-type{
+                  &:after{
+                    content: ",";
+                    margin-left: 0;
+                    font-size: $linkSize;
                   }
                 }
               }
             }
-            .ce_text {
-              display: block;
+
+            @media all and (min-width: $break3){
+              display: flex;
+              justify-content: flex-end;
+              ul{
+                display: flex;
+                justify-content: flex-end;
+                li{
+                  display: block;
+                  margin-bottom: 1rem;
+                  &:before{
+                    display: none;
+                  }
+                  &:after{
+                    content: "|";
+                    margin-left: 0.5rem;
+                    font-size: $linkSize;
+                  }
+                  &:last-of-type{
+                    &:after{
+                      display: none;
+                    }
+                  }
+                }
+              }
+            }
+          }
+          #footer-logos{
+            background-color: white;
+            padding: 5rem 1rem 0;
+            width: 95%;
+            margin: auto;
+            clip-path: polygon(0 100% , 100% 100%, 100% 0 , 0 15%);
+            .ce_gallery{
+              ul{
+                li{
+                  width: 33.33%;
+                  >*{
+                    margin: 3vw;
+                  }
+                }
+              }
+            }
+            .ce_text{
+              display: none;
+              text-align: end;
+              font-size: $linkSize;
+            }
+            @media all and (min-width: $break2 ){
+              padding: 3rem 1rem 0;
+              clip-path: polygon(0 100% , 100% 100%, 100% 0 , 0 40%);
+              .ce_gallery{
+                ul{
+                  li{
+                    width: 10%;
+                    >*{
+                      margin: 1vw;
+                    }
+                  }
+                }
+              }
+              .ce_text{
+                display: block;
+              }
             }
           }
         }
       }
-    }
-
     // Ende #Footer
 
   }

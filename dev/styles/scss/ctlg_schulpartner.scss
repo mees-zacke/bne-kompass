@@ -1,4 +1,10 @@
 .ctlg_teaser.schulpartnerschaft {
+  &.first {
+    a {
+      border-top: 1px solid $color1;
+    }
+  }
+
   a {
     >h1,>h2,>h3,>h4,>h5,>h6 {
       color: $color1;
