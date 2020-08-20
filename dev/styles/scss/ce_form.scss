@@ -51,13 +51,20 @@
                 padding-bottom: 0.5em;
               }
 
+              label{
+                &:hover{
+                  &:before{
+                    background-image: url("/files/layout/images/checkbox-haken-checked-hover.svg");
+                  }
+                }
+              }
               input {
                 display: none;
 
                 &:checked {
                   + label {
                     &:before {
-                      content: url("/files/layout/images/checkbox-haken.svg");
+                      background-image: url("/files/layout/images/checkbox-haken-checked.svg");
                     }
                   }
                 }
@@ -91,13 +98,21 @@
               padding-bottom: 0.5em;
             }
 
+            label{
+              &:hover{
+                :before{
+                  background-image: url("/files/layout/images/radio-button-hover.svg");
+                }
+              }
+            }
+
             input {
               display: none;
 
               &:checked {
                 + label {
                   &:before {
-                    content: url("/files/layout/images/radio-button.svg");
+                    background-image: url("/files/layout/images/radio-button.svg");
                   }
                 }
               }
