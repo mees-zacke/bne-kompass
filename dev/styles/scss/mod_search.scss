@@ -16,37 +16,92 @@
   }
 
   > div {
-    margin: 1rem 0;
-    padding: 1rem 0;
+    &.searchWrapper {
+      margin: 1rem 0;
+      padding: 1rem 0;
+    }
 
     &:not(.searchWrapper) {
       @include transition;
 
-      &:hover {
-        background-color: rgb(220, 220, 220);
+      &.first {
+        a {
+          border-top: 2px solid $color1;
+          margin-top: 0;
+        }
+      }
+
+      a {
+        border-top: 2px solid transparent;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+        padding-top: 1em;
+        border-bottom: 1px solid $color1;
+        display: block;
+        border-bottom-right-radius: 1rem;
+
+        h2 {
+          text-decoration: none;
+          color: $color1;
+          font-family: $font1;
+          font-weight: 600;
+          margin-bottom: 0.5em;
+          padding: 0 1rem;
+        }
+
+        p {
+          padding: 0 1rem;
+          color: $fontColor;
+          margin-bottom: 1rem;
+        }
+
+        .highlight {
+          background-color: transparent;
+          color: $color1;
+        }
+
+        .url {
+          font-size: 0.75em;
+          color: $color1;
+        }
+
+        &:hover, &:focus {
+          border-top: 2px solid $color1;
+          background-color: lighten($color1, 50%);
+          border-top-right-radius: 75px;
+        }
       }
     }
+  }
 
-    a {
-      color: $fontColor;
-      display: block;
-    }
+  .pagination {
+    ul {
+      display: flex;
+      flex-wrap: wrap;
 
-    h2 {
-      font-weight: 600;
-    }
+      li {
+        a, strong {
+          padding: 0.5rem;
+        }
 
-    p {
-      margin-bottom: 0;
-    }
+        &:first-of-type {
+          a, strong {
+            padding-left: 0;
+          }
+        }
 
-    .highlight {
-      background-color: transparent;
-      color: $color1;
-    }
+        &:last-of-type {
+          a, strong {
+            padding-right: 0;
+          }
+        }
 
-    .url {
-      font-size: 0.75em;
+        &.first, &.previous, &.next, &.last {
+          a {
+            font-weight: 600;
+          }
+        }
+      }
     }
   }
 }
