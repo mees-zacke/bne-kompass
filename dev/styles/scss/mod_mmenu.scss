@@ -45,11 +45,49 @@
 
 }
 
-.mm-listitem {
-  &_selected {
-    >.mm-listitem {
-      &__text {
-        font-weight: 800;
+.mod_mmenu{
+  .mm-panels{
+    .mm-panel{
+      background-color: lighten($color1, 50%);
+      .mm-navbar{
+        background-color:$color1;
+        a{
+          color: white;
+          font-weight: 600;
+          &:before{
+            border-color: white;
+          }
+        }
+      }
+      .mm-listview{
+        .mm-listitem{
+          background-color: lighten($color1, 10%);
+          &__text{
+            color: white;
+            font-weight: 600;
+          }
+          &__btn{
+            &:after{
+              border-color: white;
+            }
+          }
+          &_selected{
+            .mm-listitem__text{
+              background: none;
+              color: $color4;
+            }
+          }
+          &.trail{
+            .mm-listitem__text{
+              color: lighten($color4, 30%);
+            }
+            .mm-listitem__btn{
+              &:after{
+                border-color: lighten($color4, 30%);
+              }
+            }
+          }
+        }
       }
     }
   }
