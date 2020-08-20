@@ -11,7 +11,7 @@ $navColor: black;
     }
     a{
       color: white;
-      &:hover{
+      &:hover, &:focus{
         color: $color4;
       }
     }
@@ -83,7 +83,7 @@ $navColor: black;
               }
             }
 
-            &:hover, &:focus {
+            &:hover, &:focus-within {
               .level_2 {
                 transform: rotate(3deg) skewY(-3deg) scaleY(1);
               }
@@ -125,6 +125,12 @@ $navColor: black;
         a {
           color: $color1;
           font-size: $linkSize;
+          &:hover, &:focus{
+            color: $color2
+          }
+        }
+        strong{
+          color: $color2;
         }
 
         &:first-of-type {

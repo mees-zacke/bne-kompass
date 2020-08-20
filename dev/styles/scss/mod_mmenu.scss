@@ -6,10 +6,11 @@
     margin-right: 0;
     margin-top: 30px;
     .hamburger {
+      @include transition();
       height: 4px;
       width: 38px;
       margin: 7px;
-      background-color: white;
+      background-color: $color4;
       display: block;
       border-radius: 12px;
       &:first-child {
@@ -55,7 +56,13 @@
           color: white;
           font-weight: 600;
           &:before{
+            @include transition();
             border-color: white;
+          }
+          &:hover, &:focus{
+            &:before{
+              border-color: $color4;
+            }
           }
         }
       }
@@ -65,10 +72,19 @@
           &__text{
             color: white;
             font-weight: 600;
+            &:hover, &:focus{
+              color: $color4;
+            }
           }
           &__btn{
             &:after{
+              @include transition();
               border-color: white;
+            }
+            &:hover, &:focus{
+              &:after{
+                border-color: $color4;
+              }
             }
           }
           &_selected{

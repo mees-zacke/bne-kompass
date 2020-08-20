@@ -21,6 +21,9 @@ body {
 
 * {
   box-sizing: border-box;
+  &:focus{
+    outline: none;
+  }
 }
 
 a {
@@ -30,7 +33,7 @@ a {
   font-weight: 400;
   @include transition;
 
-  &:hover {
+  &:hover, &:focus {
     color: $color2;
     border-bottom: none;
   }
