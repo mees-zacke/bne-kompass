@@ -142,9 +142,8 @@ $navColor: black;
           margin-right: 0.5rem;
           font-size: $linkSize;
         }
-
-        &:first-of-type, &:last-of-type {
-          &:before {
+        &:first-of-type{
+          &:before{
             display: none;
           }
         }

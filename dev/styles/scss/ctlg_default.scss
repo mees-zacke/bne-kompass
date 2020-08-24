@@ -306,7 +306,7 @@
         }
 
         .angebotsbild {
-          grid-column: span 4;
+          grid-column: span 6;
           padding: 0 1rem;
         }
       }
@@ -314,6 +314,10 @@
       .datenblock{
         padding-bottom: 0;
         border-bottom-right-radius: 1rem;
+
+        .datenblock-links, .datenblock-rechts {
+          grid-column: span 8;
+        }
       }
 
       .weiterlesen {
@@ -330,6 +334,9 @@
         border-top: 1px solid $color1;
         border-top-left-radius: 1rem;
         border-bottom-right-radius: 1rem;
+        grid-column: span 4;
+        height: 2rem;
+        align-self: flex-end;
       }
 
       &:hover, &:focus {
