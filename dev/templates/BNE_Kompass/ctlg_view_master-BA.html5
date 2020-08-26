@@ -14,7 +14,7 @@
                 <li><strong>Anbieter</strong></li>
                 <li><?= $this->bne_veranstalterVeranstalter_name ?></li>
                 <li><?= $this->bne_veranstalterStrasse ?></li>
-                <li><?= $this->bne_veranstalterPlz ?> <?= $his->bne_veranstalterOrt ?></li>
+                <li><?= $this->bne_veranstalterPlz ?> <?= $this->bne_veranstalterOrt ?></li>
             </ul>
             <ul class="kontakt">
                 <?php if( $this->bne_veranstalterTelefonnummer ): ?>
