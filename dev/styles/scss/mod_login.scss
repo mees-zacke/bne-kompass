@@ -4,6 +4,14 @@
     padding-bottom: 1em;
     border-bottom: 2px solid $color1;
   }
+
+  .error {
+    color: red;
+    padding: 1rem 1rem;
+    border: 1px solid red;
+    background-color: white;
+  }
+
   form {
     .formbody {
       margin-bottom: 0.25rem;
@@ -13,9 +21,10 @@
       padding-top: 1rem;
       border-bottom: 1px solid $color1;
 
-      .login_info{
+      .login_info {
         padding: 1rem;
       }
+
       .widget {
         display: flex;
         flex-wrap: wrap;
