@@ -1,4 +1,5 @@
 .mod_catalogUniversalView.veranstalter{
+  grid-column: span 12;
   .ctlg_teaser{
     a{
       .titel{
@@ -9,13 +10,45 @@
     }
   }
   .ctlg_master{
+    .anbieter, .angebotsbild {
+      max-width: 100%;
+    }
     .rechte-spalte{
       >.datenblock{
         background: none;
+        .datenblock-spalte {
+          padding: 0;
+        }
+      }
+    }
+    @media all and (min-width: $break3){
+      .anbieter, .angebotsbild {
+        max-width: 35ch;
+      }
+      .rechte-spalte {
+        >.datenblock {
+          padding-top: 0;
+          .datenblock-spalte {
+            padding: 0 1rem;
+          }
+        }
       }
     }
   }
 }
+
+@media all and (min-width: $break3) {
+  #veranstalterMap {
+    grid-column: span 4;
+    order: 2;
+    +.veranstalter {
+      grid-column: span 8;
+      order: 1
+    }
+
+  }
+}
+
 
 .mod_catalogUniversalView.veranstalter-FE{
   .ctlg_master {
