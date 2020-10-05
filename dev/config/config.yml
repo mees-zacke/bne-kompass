@@ -37,7 +37,7 @@ contao:
                         media: '(max-width:768px)'
             kopfbild-gross:
                 width: 3000
-                height: 768
+                height: 500
                 resizeMode: 'crop'
                 zoom: 100
                 cssClass: 'kopfbild-gross'
@@ -45,21 +45,21 @@ contao:
                 lazy_loading: true
                 items:
                     -   width: 1920
-                        height: 768
+                        height: 500
                         resizeMode: 'crop'
                         zoom: 100
                         densities: '1x, 2x'
                         sizes: '100vw'
                         media: '(max-width: 1920px)'
                     -   width: 1024
-                        height: 575
+                        height: 300
                         resizeMode: 'crop'
                         zoom: 100
                         densities: '1x, 2x'
                         sizes: '100vw'
                         media: '(max-width:1024px)'
                     -   width: 768
-                        height: 575
+                        height: 300
                         resizeMode: 'crop'
                         zoom: 100
                         densities: '1x, 2x'
