@@ -1,0 +1,9 @@
+<div class="ctlg_master schulpartnerschaft block">
+    <div class="partnerschaft-text">
+        <h1><?= $this->title ?></h1>
+        <?php if( $this->contentElements ): ?>
+        <div class="catalog_master_content"><?= $this->contentElements; ?></div>
+        <?php endif; ?>
+    </div>
+    <a href="{{link_url::back}}" title="{{link_title::back}}" class="back">« Zurück</a>
+</div>

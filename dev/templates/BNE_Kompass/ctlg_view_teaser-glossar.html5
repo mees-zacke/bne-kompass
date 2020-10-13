@@ -1,0 +1,22 @@
+<div class="ctlg_teaser schulpartnerschaft block<?= $this->cssClass ?>">
+
+    <?php if( $this->masterUrl ): ?>
+        <a href="<?= $this->masterUrl ?>" title="Link zur Schulparterschaft zwischen <?= $this->schulname ?> und <?= $this->name_partnerschule ?>">
+    <?php endif; ?>
+
+        <h3><?= $this->title ?></h3>
+        <div class="teaser-logo-container">
+            <?php if($this->beschreibung): ?>
+            <p class="teaser">
+                <?= $this->beschreibung ?>
+
+            </p>
+            <?php endif; ?>
+            <p class="weiterlesen">Mehr dazu »</p>
+        </div>
+
+
+    <?php if( $this->masterUrl ): ?>
+      </a>
+    <?php endif; ?>
+</div>
