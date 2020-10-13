@@ -78,6 +78,10 @@
             margin-right: 2rem;
             align-items: center;
             margin-bottom: 1rem;
+            &:hover {
+              cursor: pointer;
+            }
+
 
             &:before {
               @include transition();

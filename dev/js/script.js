@@ -39,7 +39,7 @@ jQuery(function ($) {
       $('.treffer-count').append(count);
     }
     else {
-      $('.treffer-count').append('Alle');
+      $('.treffer-count').append('Alle ' + count);
     }
   }
 
