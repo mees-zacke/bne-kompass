@@ -34,7 +34,7 @@ $navColor: black;
 
         > li {
           margin-right: 0.5rem;
-          font-size: 1.75rem;
+          font-size: 1.4rem;
           display: flex;
           color: white;
           position: relative;
@@ -104,7 +104,7 @@ $navColor: black;
           }
 
           @media all and (min-width: 1300px) {
-            font-size: 2.375rem;
+            font-size: 2rem;
           }
         }
       }
@@ -172,6 +172,23 @@ $navColor: black;
             &:after {
               display: none;
             }
+          }
+        }
+      }
+    }
+  }
+  &.service-nav{
+    .level_1{
+      display: flex;
+      >li{
+        &:after{
+          content: "|";
+          margin: 0 0.5em;
+          color: white;
+        }
+        &:last-of-type{
+          &:after{
+            content: none;
           }
         }
       }
