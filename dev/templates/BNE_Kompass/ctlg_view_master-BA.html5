@@ -119,7 +119,7 @@
                 <?php endif; ?>
                 <?php if($this->dauer): ?>
                     <div class="dauer-container datenblock-spalte datenblock-rechts">
-                        <h4>Uhrzeit</h4>
+                        <h4>Dauer</h4>
                         <p><?= $this->dauer ?></p>
                     </div>
                 <?php endif; ?>
