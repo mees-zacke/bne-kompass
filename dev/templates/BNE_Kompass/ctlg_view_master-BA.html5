@@ -11,7 +11,7 @@
         <?php endif; ?>
         <div class="anbieter">
             <ul class="anschrift">
-                <li><strong>Anbieter</strong></li>
+                <li><strong>Anbieter/in</strong></li>
                 <li><?= $this->bne_veranstalterVeranstalter_name ?></li>
                 <li><?= $this->bne_veranstalterStrasse ?></li>
                 <li><?= $this->bne_veranstalterPlz ?> <?= $this->bne_veranstalterOrt ?></li>
