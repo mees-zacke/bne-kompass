@@ -11,14 +11,22 @@ body {
     //////// HEADER ////////
     ////////////////////////////
     #header {
-      display: none;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 500;
+      #header-suche-container{
+        display: none;
+      }
       @media all and (min-width: $break1) {
-        display: block;
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        z-index: 500;
+        #header-suche-container{
+          display: block;
+        }
+        #header-servicenav-container{
+          margin-left: auto;
+        }
+      }
         .inside {
           @include pageWidth;
 
@@ -60,14 +68,12 @@ body {
               clip-path: polygon(0 0, 0 100%, 100% 90%, 100% 0);
               background-color: $color1;
               padding: 20px 10px;
-              margin-left: auto;
               margin-right: 20px;
               position: relative;
               z-index: 500;
             }
           }
         }
-      }
     }
 
     // Ende #Header
